@@ -8,16 +8,12 @@ public class PlayerController : MonoBehaviour
     // angles relative to right being 0 degrees (pos goes up, neg goes down)
     float upDownAngle = 55;
     float stairsAngle = -45;
-    Vector3 upDownDirection;
-    Vector3 stairsDirection;
     float speed = 10;
-    bool onStairs;
+    TMPro.TextMeshPro playerText;
 
     void Start()
     {
-        // turn angles into direction vectors
-        upDownDirection = new Vector3(Mathf.Cos(upDownAngle * Mathf.Deg2Rad), Mathf.Sin(upDownAngle * Mathf.Deg2Rad));
-        stairsDirection = new Vector3(Mathf.Cos(stairsAngle * Mathf.Deg2Rad), Mathf.Sin(stairsAngle * Mathf.Deg2Rad));
+        playerText = this.GetComponentInChildren<TMPro.TextMeshPro>();
     }
 
     void Update()
@@ -38,6 +34,23 @@ public class PlayerController : MonoBehaviour
                 transform.position += moveInput.x * Vector3.right * speed * Time.deltaTime;
            
         }
+    }
+
+
+    public void NearClient()
+    {
+        this.UpdateText("Press E to serve drink");
+    }
+
+    public void AwayFromClient()
+    {
+        this.UpdateText("I'm the Player");
+    }
+
+
+   public void UpdateText(string s)
+    {
+        playerText.text = s;
     }
 
 
