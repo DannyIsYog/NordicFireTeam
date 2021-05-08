@@ -96,7 +96,9 @@ public class ClientController : MonoBehaviour
 
     public void Throw()
     {
-        var bottle = Instantiate(throwable, this.transform);
+        var r = Random.Range(0, pubs.throwablePrefabs.Count);
+        var prefab = pubs.throwablePrefabs[r];
+        var bottle = Instantiate(prefab, this.transform);
         bottle.transform.position = this.transform.position;
         var targetPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
 

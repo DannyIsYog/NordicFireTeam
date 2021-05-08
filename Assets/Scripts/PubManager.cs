@@ -8,6 +8,8 @@ public class PubManager : MonoBehaviour
 {
     [SerializeField] public float RandomMax;
     [SerializeField] public float RandomMin;
+    public List<GameObject> throwablePrefabs;
+
     private List<ClientController> Clients;
     private List<Places> Places;
     private List<FightZoneScript> fightZones;
