@@ -93,7 +93,7 @@ public class ClientController : MonoBehaviour
     {
         TV = true;
         _place = pubs.places[_id];
-        Debug.Log("o meu lugar é:" + pubs.places[_id]._id);
+        Debug.Log("eu sou" + _id + "o meu lugar é:" + _place._id);
     }
 
     public void Fight()

@@ -44,6 +44,7 @@ public class PubManager : MonoBehaviour
 
     private void SortCustomers()
     {
+        Debug.Log(_total);
         for (int i = 0; i < _total; i++)
         {
             Places temp = places[i];
@@ -66,10 +67,9 @@ public class PubManager : MonoBehaviour
         }
         else
         {
+            SortCustomers();
             TVOn?.Invoke();
             TV = true;
-
-            SortCustomers();
             _randomNum = UnityEngine.Random.Range(RandomMin, RandomMax);
             _randomNum += Time.unscaledTime;
         }
