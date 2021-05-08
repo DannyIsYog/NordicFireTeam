@@ -212,9 +212,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2d0663515a684c4fbaeacdcf7c11a48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clientName: Sean
+  WaitingForDrink: 0
   throwable: {fileID: 8171338108526704458, guid: f4340277bec65044c9b7bf76333c58a4, type: 3}
-  throwForce: 2
+  throwForce: 0.5
   _id: 0
   target: {x: 0, y: 0, z: 0}
   pubs: {fileID: 0}

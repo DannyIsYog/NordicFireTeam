@@ -1317,6 +1317,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &881021373 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3072532343214673646, guid: 4acbdfd2ebe28e846a956caefdb112f9, type: 3}
+  m_PrefabInstance: {fileID: 1120330802}
+  m_PrefabAsset: {fileID: 0}
+--- !u!208 &881021374
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881021373}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.45, y: 0.175, z: 0.45}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.46, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &903214426
 GameObject:
   m_ObjectHideFlags: 0
@@ -1710,6 +1731,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5558967531031698217, guid: 4acbdfd2ebe28e846a956caefdb112f9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7911629498249297660, guid: 4acbdfd2ebe28e846a956caefdb112f9, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -6453,27 +6478,6 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &2136245816 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8097983222759361761, guid: 4acbdfd2ebe28e846a956caefdb112f9, type: 3}
-  m_PrefabInstance: {fileID: 1120330802}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2136245817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2136245816}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_OverrideArea: 1
-  m_Area: 1
-  m_IgnoreFromBuild: 0
-  m_AffectedAgents: ffffffff
 --- !u!1001 &2366434182736774744
 PrefabInstance:
   m_ObjectHideFlags: 0

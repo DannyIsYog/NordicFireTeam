@@ -214,7 +214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WaitingForDrink: 0
   throwable: {fileID: 8171338108526704458, guid: f4340277bec65044c9b7bf76333c58a4, type: 3}
-  throwForce: 1
+  throwForce: 0.5
   _id: 0
   target: {x: 0, y: 0, z: 0}
   pubs: {fileID: 0}

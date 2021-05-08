@@ -19,6 +19,7 @@ public class ClientController : MonoBehaviour
     private NavMeshAgent client;
     private bool followingPlayer;
     private bool fighting = false;
+    private bool throwing = false;
     private Animator clientAnimator;
     private SpriteRenderer clientRenderer;
     [SerializeField] Vector3 target;
@@ -59,7 +60,10 @@ public class ClientController : MonoBehaviour
 
         if (fighting)
         {
-            if (followingPlayer)
+            target = GameObject.FindGameObjectWithTag("FightZone").transform.position;
+            client.SetDestination(target);
+        }
+         else if (followingPlayer)
             {
                 target = GameObject.FindGameObjectWithTag("Player").transform.position;
                 client.SetDestination(target);
@@ -69,8 +73,18 @@ public class ClientController : MonoBehaviour
                 else clientRenderer.flipX = false;
 
             }
+
+        else if (throwing)
+        {
+            var r = Random.Range(0, 100);
+            var r2 = Random.Range(0, 100);
+            if (r > 98 && r2 > 95)
+                Throw();
         }
+
+
     }
+    
 
     public void ReceivedDrink()
     {
@@ -154,16 +168,10 @@ public class ClientController : MonoBehaviour
 
     public void ReturnToSeat()
     {
-
-        if(type == 3)
-        {
-            fighting = false;
-            this.clientRenderer.color = new Color(1, 1, 1, 1);
-        }
-
-        if (type == 2)
-            followingPlayer = false;
-
+      fighting = false;
+      this.clientRenderer.color = new Color(1, 1, 1, 1);
+      followingPlayer = false;
+      throwing = false;
         target = pubs.getPlace(this._id).transform.position;
         client.SetDestination(target);
 
@@ -201,7 +209,7 @@ public class ClientController : MonoBehaviour
                 break;
 
             case 4:
-                Throw();
+                throwing = true;
                 break;
         }
     }

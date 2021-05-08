@@ -22,7 +22,7 @@ public class FightZoneScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        NextAction();
+       
         pubManager = GameObject.Find("PubManager").GetComponent<PubManager>();
         pubManager.TVOn += StopFight;
         pubManager.TVOff += Activate;
@@ -78,6 +78,7 @@ public class FightZoneScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if(waitingForClients)
         if (collision.gameObject.tag == "Client")
             if (customer1 == null)
             {
