@@ -79,16 +79,13 @@ public class FightZoneScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Client")
-            Debug.Log("cheguei aqui1\n");
             if (customer1 == null)
             {
-                Debug.Log("cheguei aqui2\n");
                 customer1 = collision.gameObject;
             }
             else if (customer2 == null && collision.gameObject != customer1)
             {
                 customer2 = collision.gameObject;
-                Debug.Log("cheguei aqui3\n");
                 StartFight();
             }
     }
