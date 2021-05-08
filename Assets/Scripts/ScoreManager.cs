@@ -15,6 +15,7 @@ public class ScoreManager : MonoBehaviour
 
     void Start()
     {
+        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         _score = 0;
         _player.Delivery += IncreaseScore;
         _player.FailedDelivery += DecreaseScore;

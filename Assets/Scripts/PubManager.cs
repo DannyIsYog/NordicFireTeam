@@ -15,7 +15,7 @@ public class PubManager : MonoBehaviour
     private List<FightZoneScript> fightZones;
     private List<string> irishNames;
 
-    private TextMeshProUGUI goalClient;
+    public TextMeshProUGUI goalClient;
     private PlayerController playerController;
 
     public List<GameObject> clientPrefabs;
@@ -70,11 +70,58 @@ public class PubManager : MonoBehaviour
            "Engberg",
            "Sigismund",
            "Amanda",
+           "O'Brexit",
+              "Sheehan",
+           "Donelly",
+           "Flanagan",
+           "Guimaraes",
+           "Antunes",
+           "Costa",
+           "Machado",
+           "Sousa",
+           "O'Leary",
+           "McDonnell",
+           "Frans",
+           "Rine",
+           "Engberg",
+           "Sigismund",
+           "Amanda",
+           "O'Brexit",
+              "Sheehan",
+           "Donelly",
+           "Flanagan",
+           "Guimaraes",
+           "Antunes",
+           "Costa",
+           "Machado",
+           "Sousa",
+           "O'Leary",
+           "McDonnell",
+           "Frans",
+           "Rine",
+           "Engberg",
+           "Sigismund",
+           "Amanda",
+           "O'Brexit",
+              "Sheehan",
+           "Donelly",
+           "Flanagan",
+           "Guimaraes",
+           "Antunes",
+           "Costa",
+           "Machado",
+           "Sousa",
+           "O'Leary",
+           "McDonnell",
+           "Frans",
+           "Rine",
+           "Engberg",
+           "Sigismund",
+           "Amanda",
            "O'Brexit"
         };
 
         Shuffle(irishNames);
-        goalClient = GameObject.Find("UIGoal").GetComponent<TextMeshProUGUI>();
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         TV = true;
 
