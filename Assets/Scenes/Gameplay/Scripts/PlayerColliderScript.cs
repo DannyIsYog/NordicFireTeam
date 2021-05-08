@@ -35,7 +35,7 @@ public class PlayerColliderScript : MonoBehaviour
                     playerController.ServedDrink();
                    
                 
-                else  playerController.ServedFailedDrink();
+                else  playerController.FailedServedDrink();
 
                     nearClient.GetComponentInChildren<ClientController>().ReceivedDrink();
              }
