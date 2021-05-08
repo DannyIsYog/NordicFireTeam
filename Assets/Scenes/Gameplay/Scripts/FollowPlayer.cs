@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class AgentScript : MonoBehaviour
+public class FollowPlayer : MonoBehaviour
 {
     [SerializeField] Transform target;
 
