@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public event Action Delivery;
     public event Action FailedDelivery;
     public event Action Pickup;
+    public event Action Fall;
     private GameObject goalUI;
     private float textTimer = 3.0f;
 
@@ -135,6 +136,8 @@ public class PlayerController : MonoBehaviour
         playerAnimator.SetBool("HasPlate", false);
         playerAnimator.SetBool("HasBeer", false);
         hasBeer = false;
+
+        Fall?.Invoke();
     }
 
     public void GotDown()
