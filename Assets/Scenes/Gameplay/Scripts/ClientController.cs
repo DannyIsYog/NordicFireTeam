@@ -25,6 +25,7 @@ public class ClientController : MonoBehaviour
 
     private float timerAux;
     private float textTime = 3.0f;
+    
 
     void Start()
     {
@@ -122,8 +123,12 @@ public class ClientController : MonoBehaviour
 
     public void Fight()
     {
-        clientAnimator.SetBool("HasBeer", false);
         //Activate Fight Routine Booolean
+        target = GameObject.FindGameObjectWithTag("FightZone").transform.position;
+        client.SetDestination(target);
+        clientAnimator.SetBool("Walking", true);
+        clientAnimator.SetBool("HasBeer", false);
+           
     }
 
 
