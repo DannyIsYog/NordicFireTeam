@@ -268,6 +268,7 @@ GameObject:
   m_Component:
   - component: {fileID: 31418864}
   - component: {fileID: 31418865}
+  - component: {fileID: 31418866}
   m_Layer: 0
   m_Name: Box
   m_TagString: Untagged
@@ -340,6 +341,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &31418866
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31418863}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.365}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 0.6, y: 0.73}
+    newSize: {x: 0.6, y: 0.73}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.6, y: 0.73}
+  m_EdgeRadius: 0
 --- !u!1001 &62071466
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1802,9 +1829,11 @@ MonoBehaviour:
   _clipsPlayer:
   - {fileID: 8300000, guid: be888087d203651409dc3085a75a9749, type: 3}
   - {fileID: 8300000, guid: defa9bba6dd0f2a4199515171b13d7bd, type: 3}
+  _clipsCrowd: []
   _audioTV: {fileID: 1435542929}
   _audioPlayer: {fileID: 0}
   _audioMusic: {fileID: 640226038}
+  _audioCrowd: {fileID: 0}
   _animatorMusic: {fileID: 640226037}
   Pubs: {fileID: 1021008814}
 --- !u!4 &563122604
@@ -6540,6 +6569,7 @@ GameObject:
   m_Component:
   - component: {fileID: 666183567}
   - component: {fileID: 666183568}
+  - component: {fileID: 666183569}
   m_Layer: 0
   m_Name: Box-abandoned
   m_TagString: Untagged
@@ -6612,6 +6642,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &666183569
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666183566}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.5842377}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 0.6, y: 0.73}
+    newSize: {x: 0.6, y: 0.73}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.6, y: 0.29152465}
+  m_EdgeRadius: 0
 --- !u!1 &670005680
 GameObject:
   m_ObjectHideFlags: 0
@@ -6622,6 +6678,7 @@ GameObject:
   m_Component:
   - component: {fileID: 670005681}
   - component: {fileID: 670005682}
+  - component: {fileID: 670005683}
   m_Layer: 0
   m_Name: Box (1)
   m_TagString: Untagged
@@ -6694,6 +6751,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &670005683
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670005680}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.365}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 0.6, y: 0.73}
+    newSize: {x: 0.6, y: 0.73}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.6, y: 0.73}
+  m_EdgeRadius: 0
 --- !u!1001 &671094240
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32368,6 +32451,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RandomMax: 20
   RandomMin: 10
+  throwablePrefabs: []
   clientPrefabs:
   - {fileID: 7392010041263872204, guid: defa489cbbec528499cfd1f580ccd2e7, type: 3}
   - {fileID: 1560262833535761354, guid: e4e16287dd8b44d45a71eb13040882fc, type: 3}
@@ -34907,6 +34991,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1752353407}
   - component: {fileID: 1752353408}
+  - component: {fileID: 1752353409}
   m_Layer: 0
   m_Name: Box (2)
   m_TagString: Untagged
@@ -34979,6 +35064,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1752353409
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752353406}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.365}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 0.6, y: 0.73}
+    newSize: {x: 0.6, y: 0.73}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.6, y: 0.73}
+  m_EdgeRadius: 0
 --- !u!1001 &1765694059
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35423,6 +35534,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 377937509, guid: 94597890d52264a44abc507752c6fad4, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3149753920771744825, guid: 94597890d52264a44abc507752c6fad4, type: 3}
       propertyPath: _player
       value: 
