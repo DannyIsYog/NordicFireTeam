@@ -47,3 +47,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: CounterLayer
+    uniqueID: 1596875781
+    locked: 0
+  - name: TablesAndDecor
+    uniqueID: 2673437573
+    locked: 0
