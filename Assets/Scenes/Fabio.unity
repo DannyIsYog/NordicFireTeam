@@ -586,6 +586,62 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2597368670152228541, guid: 1a28745228b84497c8cf5d0831913d3b, type: 3}
+      propertyPath: m_Points.Array.data[0].x
+      value: -3.228094
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597368670152228541, guid: 1a28745228b84497c8cf5d0831913d3b, type: 3}
+      propertyPath: m_Points.Array.data[0].y
+      value: 0.599565
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597368670152228541, guid: 1a28745228b84497c8cf5d0831913d3b, type: 3}
+      propertyPath: m_Points.Array.data[1].x
+      value: -3.2580318
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597368670152228541, guid: 1a28745228b84497c8cf5d0831913d3b, type: 3}
+      propertyPath: m_Points.Array.data[1].y
+      value: 0.8049128
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597368670152228541, guid: 1a28745228b84497c8cf5d0831913d3b, type: 3}
+      propertyPath: m_Points.Array.data[5].x
+      value: 0.86170006
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597368670152228541, guid: 1a28745228b84497c8cf5d0831913d3b, type: 3}
+      propertyPath: m_Points.Array.data[5].y
+      value: 0.812449
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597368670152228541, guid: 1a28745228b84497c8cf5d0831913d3b, type: 3}
+      propertyPath: m_Points.Array.data[6].x
+      value: 0.85663605
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597368670152228541, guid: 1a28745228b84497c8cf5d0831913d3b, type: 3}
+      propertyPath: m_Points.Array.data[6].y
+      value: 0.6269686
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597368670152228541, guid: 1a28745228b84497c8cf5d0831913d3b, type: 3}
+      propertyPath: m_Points.Array.data[7].x
+      value: 0.6988964
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597368670152228541, guid: 1a28745228b84497c8cf5d0831913d3b, type: 3}
+      propertyPath: m_Points.Array.data[7].y
+      value: 0.5827551
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597368670152228541, guid: 1a28745228b84497c8cf5d0831913d3b, type: 3}
+      propertyPath: m_Points.Array.data[8].x
+      value: 0.29203987
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597368670152228541, guid: 1a28745228b84497c8cf5d0831913d3b, type: 3}
+      propertyPath: m_Points.Array.data[8].y
+      value: 0.58757615
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597368670152228541, guid: 1a28745228b84497c8cf5d0831913d3b, type: 3}
+      propertyPath: m_Points.Array.data[9].x
+      value: -3.2360945
+      objectReference: {fileID: 0}
+    - target: {fileID: 2597368670152228541, guid: 1a28745228b84497c8cf5d0831913d3b, type: 3}
+      propertyPath: m_Points.Array.data[9].y
+      value: 0.5717156
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a28745228b84497c8cf5d0831913d3b, type: 3}
 --- !u!4 &155502437 stripped
@@ -851,6 +907,7 @@ GameObject:
   m_Component:
   - component: {fileID: 377113259}
   - component: {fileID: 377113260}
+  - component: {fileID: 377113261}
   m_Layer: 0
   m_Name: Wall-barrel (1)
   m_TagString: Untagged
@@ -923,6 +980,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &377113261
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377113258}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.64}
+  serializedVersion: 2
+  m_Radius: 0.34
 --- !u!1 &400082120
 GameObject:
   m_ObjectHideFlags: 0
@@ -1268,6 +1341,7 @@ GameObject:
   m_Component:
   - component: {fileID: 497556843}
   - component: {fileID: 497556844}
+  - component: {fileID: 497556845}
   m_Layer: 0
   m_Name: Bucket-empty
   m_TagString: Untagged
@@ -1340,6 +1414,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &497556845
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 497556842}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.275}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 0.57, y: 0.55}
+    newSize: {x: 0.57, y: 0.55}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.57, y: 0.55}
+  m_EdgeRadius: 0
 --- !u!1 &508675420
 GameObject:
   m_ObjectHideFlags: 0
@@ -1443,6 +1543,7 @@ GameObject:
   m_Component:
   - component: {fileID: 539732200}
   - component: {fileID: 539732201}
+  - component: {fileID: 539732202}
   m_Layer: 0
   m_Name: Sack2
   m_TagString: Untagged
@@ -1515,6 +1616,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &539732202
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539732199}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.43}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.12692122}
+    oldSize: {x: 0.49, y: 0.44}
+    newSize: {x: 0.49, y: 0.44}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.49, y: 0.44}
+  m_EdgeRadius: 0
 --- !u!1001 &543624841
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6845,6 +6972,7 @@ GameObject:
   m_Component:
   - component: {fileID: 713555407}
   - component: {fileID: 713555408}
+  - component: {fileID: 713555409}
   m_Layer: 0
   m_Name: Wall-barrel (2)
   m_TagString: Untagged
@@ -6917,6 +7045,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &713555409
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 713555406}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.64}
+  serializedVersion: 2
+  m_Radius: 0.34
 --- !u!1001 &728050946
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7108,6 +7252,7 @@ GameObject:
   m_Component:
   - component: {fileID: 780152548}
   - component: {fileID: 780152549}
+  - component: {fileID: 780152550}
   m_Layer: 0
   m_Name: Barrel
   m_TagString: Untagged
@@ -7180,6 +7325,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &780152550
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780152547}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.4}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 0.69, y: 0.8}
+    newSize: {x: 0.69, y: 0.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.69, y: 0.8}
+  m_EdgeRadius: 0
 --- !u!1001 &794124204
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7655,6 +7826,7 @@ GameObject:
   m_Component:
   - component: {fileID: 867100123}
   - component: {fileID: 867100124}
+  - component: {fileID: 867100125}
   m_Layer: 0
   m_Name: Bucket-full (2)
   m_TagString: Untagged
@@ -7727,6 +7899,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &867100125
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867100122}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.275}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 0.57, y: 0.55}
+    newSize: {x: 0.57, y: 0.55}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.57, y: 0.55}
+  m_EdgeRadius: 0
 --- !u!1 &873947679
 GameObject:
   m_ObjectHideFlags: 0
@@ -8196,6 +8394,7 @@ GameObject:
   m_Component:
   - component: {fileID: 976927235}
   - component: {fileID: 976927236}
+  - component: {fileID: 976927237}
   m_Layer: 0
   m_Name: Wall-barrel (3)
   m_TagString: Untagged
@@ -8268,6 +8467,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &976927237
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976927234}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.64}
+  serializedVersion: 2
+  m_Radius: 0.34
 --- !u!1001 &998622207
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8319,9 +8534,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6596739560507510297, guid: 84c6856fd38d8d74a8764d7514deffd2, type: 3}
+      propertyPath: m_Size.y
+      value: 1.1953914
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596739560507510297, guid: 84c6856fd38d8d74a8764d7514deffd2, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.09769571
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596739560507510299, guid: 84c6856fd38d8d74a8764d7514deffd2, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6596739560507510302, guid: 84c6856fd38d8d74a8764d7514deffd2, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596739560507510303, guid: 84c6856fd38d8d74a8764d7514deffd2, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596739560507510303, guid: 84c6856fd38d8d74a8764d7514deffd2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596739560507510303, guid: 84c6856fd38d8d74a8764d7514deffd2, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1621529723
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84c6856fd38d8d74a8764d7514deffd2, type: 3}
@@ -31855,6 +32094,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1011710954}
   - component: {fileID: 1011710955}
+  - component: {fileID: 1011710956}
   m_Layer: 0
   m_Name: Big-bucket
   m_TagString: Untagged
@@ -31927,6 +32167,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1011710956
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011710953}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.48946294}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 0.84, y: 0.66}
+    newSize: {x: 0.84, y: 0.66}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.84, y: 0.34107417}
+  m_EdgeRadius: 0
 --- !u!1 &1017212305
 GameObject:
   m_ObjectHideFlags: 0
@@ -32801,6 +33067,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1309519952}
   - component: {fileID: 1309519953}
+  - component: {fileID: 1309519954}
   m_Layer: 0
   m_Name: Barrel (2)
   m_TagString: Untagged
@@ -32873,6 +33140,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1309519954
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309519951}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.59446704}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 0.69, y: 0.8}
+    newSize: {x: 0.69, y: 0.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.69, y: 0.41106582}
+  m_EdgeRadius: 0
 --- !u!1001 &1321418485
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33112,6 +33405,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1403952558}
   - component: {fileID: 1403952559}
+  - component: {fileID: 1403952560}
   m_Layer: 0
   m_Name: Barrel-abandoned
   m_TagString: Untagged
@@ -33184,6 +33478,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1403952560
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403952557}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.043199986, y: 0.335}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.56, y: 0}
+    oldSize: {x: 0.72, y: 0.67}
+    newSize: {x: 0.72, y: 0.67}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.72, y: 0.67}
+  m_EdgeRadius: 0
 --- !u!1 &1412821911
 GameObject:
   m_ObjectHideFlags: 0
@@ -33194,6 +33514,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1412821912}
   - component: {fileID: 1412821913}
+  - component: {fileID: 1412821914}
   m_Layer: 0
   m_Name: Barrel (1)
   m_TagString: Untagged
@@ -33266,6 +33587,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1412821914
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412821911}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.4}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 0.69, y: 0.8}
+    newSize: {x: 0.69, y: 0.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.69, y: 0.8}
+  m_EdgeRadius: 0
 --- !u!1 &1423573286
 GameObject:
   m_ObjectHideFlags: 0
@@ -34205,6 +34552,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1676011861}
   - component: {fileID: 1676011862}
+  - component: {fileID: 1676011863}
   m_Layer: 0
   m_Name: Bucket-full (1)
   m_TagString: Untagged
@@ -34277,6 +34625,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1676011863
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676011860}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.275}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 0.57, y: 0.55}
+    newSize: {x: 0.57, y: 0.55}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.57, y: 0.55}
+  m_EdgeRadius: 0
 --- !u!1 &1699678472
 GameObject:
   m_ObjectHideFlags: 0
@@ -34739,6 +35113,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1845197556}
   - component: {fileID: 1845197557}
+  - component: {fileID: 1845197558}
   m_Layer: 0
   m_Name: Big-jar
   m_TagString: Untagged
@@ -34754,7 +35129,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1845197555}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.61, y: 6.94, z: 0}
+  m_LocalPosition: {x: -3.74, y: 7.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 29871135}
@@ -34811,6 +35186,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!70 &1845197558
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845197555}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.54}
+  m_Size: {x: 0.58, y: 0.0001}
+  m_Direction: 0
 --- !u!1 &1851075118
 GameObject:
   m_ObjectHideFlags: 0
@@ -35322,6 +35713,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1992003187}
   - component: {fileID: 1992003188}
+  - component: {fileID: 1992003189}
   m_Layer: 0
   m_Name: Bucket-full
   m_TagString: Untagged
@@ -35394,6 +35786,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1992003189
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992003186}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.275}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 0.57, y: 0.55}
+    newSize: {x: 0.57, y: 0.55}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.57, y: 0.55}
+  m_EdgeRadius: 0
 --- !u!1 &1997836574
 GameObject:
   m_ObjectHideFlags: 0
@@ -35547,6 +35965,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2045863332}
   - component: {fileID: 2045863333}
+  - component: {fileID: 2045863334}
   m_Layer: 0
   m_Name: Wall-barrel
   m_TagString: Untagged
@@ -35619,6 +36038,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &2045863334
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045863331}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.64}
+  serializedVersion: 2
+  m_Radius: 0.34
 --- !u!1 &2094009682
 GameObject:
   m_ObjectHideFlags: 0

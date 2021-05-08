@@ -1239,6 +1239,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4878791131227684}
+  - component: {fileID: 2597368670152228541}
   m_Layer: 0
   m_Name: Counter L
   m_TagString: Untagged
@@ -1287,6 +1288,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &2597368670152228541
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078750389591564}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -3.284769, y: 0.02677679}
+  - {x: -3.3013706, y: 0.814914}
+  - {x: 0.24974155, y: 0.79983544}
+  - {x: 0.29716015, y: 7.799713}
+  - {x: 0.89023685, y: 7.796503}
+  - {x: 0.88785267, y: 0.6119461}
+  - {x: 0.90022373, y: 0.374161}
+  - {x: 0.6901789, y: 0.15559721}
+  - {x: 0.30075645, y: 0.038373232}
+  - {x: -3.2487268, y: 0.02677679}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &1204900437176430
 GameObject:
   m_ObjectHideFlags: 0
