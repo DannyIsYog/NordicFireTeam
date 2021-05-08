@@ -9,14 +9,14 @@ public class ScoreManager : MonoBehaviour
 {
     public TextMeshProUGUI timerText;
     private float _score;
-    private bool finnished = false;
     public PlayerController _player;
     public Animator _animator;
 
     void Start()
     {
         _score = 0;
-        _player.Delivery += Score;
+        _player.Delivery += IncreaseScore;
+        _player.FailedDelivery += DecreaseScore;
     }
 
     // Update is called once per frame
@@ -25,10 +25,15 @@ public class ScoreManager : MonoBehaviour
         timerText.text = "Score: " + _score;
     }
 
-    public void Score()
+    public void IncreaseScore()
     {
         _animator.SetTrigger("Score");
         _score += 1;
-        finnished = true;
+    }
+
+    public void DecreaseScore()
+    {
+        _animator.SetTrigger("Score");
+        _score -= 1;
     }
 }

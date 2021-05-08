@@ -8,14 +8,14 @@ public class PubManager : MonoBehaviour
 {
     [SerializeField] public float RandomMax;
     [SerializeField] public float RandomMin;
-    [SerializeField] private List<ClientController> Clients;
-    [SerializeField] private List<Places> Places;
-    [SerializeField] private List<string> irishNames;
+    private List<ClientController> Clients;
+    private List<Places> Places;
+    private List<string> irishNames;
 
     private TextMeshProUGUI goalClient;
     private PlayerController playerController;
 
-    public GameObject clientPrefab;
+    public List<GameObject> clientPrefabs;
     public ClientController CurrentClient;
     private int _total;
     public bool TV;
@@ -66,7 +66,10 @@ public class PubManager : MonoBehaviour
         foreach(var obj in objs)
         {
             Places.Add(obj.GetComponent<Places>());
-            var client = Instantiate(clientPrefab);
+            var rand = UnityEngine.Random.Range(0, clientPrefabs.Count);
+           
+            var prefab = clientPrefabs[rand];
+            var client = Instantiate(prefab);
             client.transform.position = obj.transform.position;
             var clientController = client.GetComponentInChildren<ClientController>();
             clientController._id = index;
