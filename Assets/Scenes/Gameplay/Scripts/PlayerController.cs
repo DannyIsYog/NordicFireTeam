@@ -5,9 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    // angles relative to right being 0 degrees (pos goes up, neg goes down)
-    float upDownAngle = 55;
-    float stairsAngle = -45;
+ 
     float speed = 10;
     TMPro.TextMeshPro playerText;
 

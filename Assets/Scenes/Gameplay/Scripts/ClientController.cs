@@ -10,6 +10,7 @@ public class ClientController : MonoBehaviour
     TextMeshPro clientText;
     private bool waitingForDrink;
     public string clientName;
+    public GameObject throwable;
     
     void Start()
     {
@@ -17,6 +18,12 @@ public class ClientController : MonoBehaviour
         clientText.text = "Awaiting Drink";
         waitingForDrink = Random.Range(0, 10) > 5;
         UpdateText(clientName);
+    }
+
+    void FixedUpdate()
+    {
+        if (Random.Range(0, 100) > 98)
+            Throw();    
     }
 
     public void ReceivedDrink()
@@ -29,6 +36,17 @@ public class ClientController : MonoBehaviour
     public void UpdateText(string s)
     {
         clientText.text = s;
+    }
+
+    public void Throw()
+    {
+        var bottle = Instantiate(throwable, this.transform);
+        bottle.transform.position = this.transform.position;
+        var targetPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+
+        var bottlePosition = bottle.transform.position;
+
+        bottle.transform.GetComponent<Rigidbody2D>().AddForce((targetPosition - bottlePosition) * 10, ForceMode2D.Impulse);
     }
 
 }
