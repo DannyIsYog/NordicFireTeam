@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
         if (moveInput.y != 0)
         {
             // apply with the new up/down direction vector instead of Vector3.up
-            transform.position += moveInput.y * Vector3.up * speed * Time.deltaTime;
+            transform.position += moveInput.y * Vector3.up * tempSpeed * Time.deltaTime;
         }
 
         if (moveInput.x != 0)
