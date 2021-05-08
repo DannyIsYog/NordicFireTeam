@@ -10,7 +10,8 @@ public class ScoreManager : MonoBehaviour
     public TextMeshProUGUI timerText;
     private float _score;
     public PlayerController _player;
-    public Animator _animator;
+    public Animator _animatorPlus1;
+    public Animator _animatorLess1;
 
     void Start()
     {
@@ -27,13 +28,13 @@ public class ScoreManager : MonoBehaviour
 
     public void IncreaseScore()
     {
-        _animator.SetTrigger("Score");
+        _animatorPlus1.SetTrigger("Score");
         _score += 1;
     }
 
     public void DecreaseScore()
     {
-        _animator.SetTrigger("Score");
+        _animatorLess1.SetTrigger("Score");
         _score -= 1;
     }
 }
