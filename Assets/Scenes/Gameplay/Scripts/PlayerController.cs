@@ -15,12 +15,16 @@ public class PlayerController : MonoBehaviour
     private bool downed = false;
     private bool hasBeer = false;
     public event Action Delivery;
+    private GameObject goalUI;
+
 
     void Start()
     {
         playerText = this.GetComponentInChildren<TMPro.TextMeshPro>();
         playerSprite = this.GetComponent<SpriteRenderer>();
         playerAnimator = this.GetComponent<Animator>();
+        goalUI = GameObject.Find("UIGoal");
+        goalUI.SetActive(false);
     }
 
     void Update()
@@ -73,12 +77,20 @@ public class PlayerController : MonoBehaviour
         if (!hasBeer)
             this.UpdateText("Press E to grab Beer");
         else this.UpdateText("You already have a Beer");
+
+        goalUI.SetActive(true);
     }
 
     public void AwayFromClient()
     {
         this.UpdateText("I'm the Player");
     }
+
+    public void AwayFromBar()
+    {
+        goalUI.SetActive(false);
+    }
+
     public void UpdateText(string s)
     {
         playerText.text = s;
@@ -106,19 +118,27 @@ public class PlayerController : MonoBehaviour
 
     public void PickedUpDrink()
     {
-        this.UpdateText("Another round");
-        hasBeer = true;
-        playerAnimator.SetBool("HasBeer", true);
-        playerAnimator.SetBool("HasPlate", true);
+        if (!hasBeer)
+        {
+            this.UpdateText("Another round");
+            hasBeer = true;
+            playerAnimator.SetBool("HasBeer", true);
+            playerAnimator.SetBool("HasPlate", true);
+        }
     }
 
     public void ServedDrink()
     {
-        this.UpdateText("Enjooy");
-        playerAnimator.SetBool("HasBeer", false);
-        hasBeer = false;
-        Delivery?.Invoke();
+        if (hasBeer)
+        {
+            this.UpdateText("Enjooy");
+            playerAnimator.SetBool("HasBeer", false);
+            hasBeer = false;
+            Delivery?.Invoke();
+        }
     }
+
+
 
 
 

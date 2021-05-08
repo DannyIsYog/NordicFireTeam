@@ -80,7 +80,7 @@ public class PlayerColliderScript : MonoBehaviour
 
         else if (collision.gameObject.tag == "Drink")
         {
-            playerController.AwayFromClient();
+            playerController.AwayFromBar();
             isNearDrink = false;
             nearClient = null;
         }

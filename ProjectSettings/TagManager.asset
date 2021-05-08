@@ -8,7 +8,7 @@ TagManager:
   - Drink
   - Puddle
   - FightingPoint
-  - Sit
+  - Seat
   layers:
   - Default
   - TransparentFX
