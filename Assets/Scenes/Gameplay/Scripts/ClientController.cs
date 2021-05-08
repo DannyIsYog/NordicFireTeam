@@ -13,19 +13,26 @@ public class ClientController : MonoBehaviour
     public GameObject throwable;
     public float throwForce = 5.0f;
     private Places _place;
-    private int _id;
+    public int _id;
+    private bool TV;
+
+    [SerializeField] PubManager pubs;
 
     void Start()
     {
+        TV = true;
         this.clientText = this.GetComponent<TMPro.TextMeshPro>();
         clientText.text = "Awaiting Drink";
         waitingForDrink = Random.Range(0, 10) > 5;
         UpdateText(clientName);
+
+        pubs.TVOn += WatchGame;
+        pubs.TVOff += Fight;
     }
 
     void FixedUpdate()
     {
-        if (Random.Range(0, 100) > 98)
+        if (Random.Range(0, 100) > 98 && TV == false)
             Throw();    
     }
 
@@ -50,6 +57,18 @@ public class ClientController : MonoBehaviour
         var bottlePosition = bottle.transform.position;
 
         bottle.transform.GetComponent<Rigidbody2D>().AddForce((targetPosition - bottlePosition) * throwForce, ForceMode2D.Impulse);
+    }
+
+    public void WatchGame()
+    {
+        TV = true;
+        _place = pubs.places[_id];
+        Debug.Log("o meu lugar é:" + pubs.places[_id]._id);
+    }
+
+    public void Fight()
+    {
+        TV = false;
     }
 
 }
