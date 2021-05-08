@@ -38,7 +38,7 @@ public class PubManager : MonoBehaviour
        "O'Sullivan" ,"Mc Gregor", 
               "O'Brien" ,
             "O’Neill" ,
-             "O'Sulliva",
+             "O’Carroll",
              "O’Reilly" ,
             "McCarthy",
             "Gallagher", 
@@ -49,7 +49,19 @@ public class PubManager : MonoBehaviour
              "Maguire" ,
              "O’Callaghan", 
             "O’Mahony" ,
-           "O’Shea" 
+           "O’Shea",
+           "O’Callaghan",
+           "Cunningham",
+           "Sheehan",
+           "Donelly",
+           "Flanagan",
+           "Guimaraes",
+           "Antunes",
+           "Costa",
+           "Machado",
+           "Sousa",
+           "O'Leary",
+           "McDonnell"
 
         };
 

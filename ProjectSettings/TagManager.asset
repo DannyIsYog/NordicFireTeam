@@ -9,6 +9,7 @@ TagManager:
   - Puddle
   - FightingPoint
   - Seat
+  - FightZone
   layers:
   - Default
   - TransparentFX
