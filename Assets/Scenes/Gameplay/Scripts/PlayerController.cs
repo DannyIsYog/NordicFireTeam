@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     private bool downed = false;
     private bool hasBeer = false;
     public event Action Delivery;
+    public event Action Pickup;
     private GameObject goalUI;
 
 
@@ -124,6 +125,7 @@ public class PlayerController : MonoBehaviour
             hasBeer = true;
             playerAnimator.SetBool("HasBeer", true);
             playerAnimator.SetBool("HasPlate", true);
+            Pickup?.Invoke();
         }
     }
 
