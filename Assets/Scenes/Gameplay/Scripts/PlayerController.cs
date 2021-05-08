@@ -113,7 +113,7 @@ public class PlayerController : MonoBehaviour
 
     public void AwayFromClient()
     {
-        this.UpdateText("I'm the Player");
+
     }
 
     public void AwayFromBar()

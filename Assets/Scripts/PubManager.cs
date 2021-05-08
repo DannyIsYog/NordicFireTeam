@@ -69,8 +69,8 @@ public class PubManager : MonoBehaviour
            "Rine",
            "Engberg",
            "Sigismund",
-           "Amanda"
-
+           "Amanda",
+           "O'Brexit"
         };
 
         Shuffle(irishNames);

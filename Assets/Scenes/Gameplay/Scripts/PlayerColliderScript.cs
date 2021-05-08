@@ -16,7 +16,7 @@ public class PlayerColliderScript : MonoBehaviour
     void Start()
     {
         this.clientText = this.GetComponent<TMPro.TextMeshPro>();
-        clientText.text = "I'm the Player";
+        clientText.text = " ";
         playerController = this.GetComponentInParent<PlayerController>();
         isNearClient = false;
         isNearDrink = false;
