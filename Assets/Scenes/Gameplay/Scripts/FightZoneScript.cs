@@ -82,10 +82,12 @@ public class FightZoneScript : MonoBehaviour
             if (customer1 == null)
             {
                 customer1 = collision.gameObject;
+                customer1.gameObject.GetComponentInChildren<ClientController>().Fighting();
             }
             else if (customer2 == null && collision.gameObject != customer1)
             {
                 customer2 = collision.gameObject;
+                customer2.gameObject.GetComponentInChildren<ClientController>().Fighting();
                 StartFight();
             }
     }

@@ -16,7 +16,7 @@ public class Throwable : MonoBehaviour
     void Update()
     {
         lifeTime -= Time.deltaTime;
-
+        this.transform.Rotate(0, 0,1f);
         if (lifeTime <= 0)
             Destroy(this.gameObject);
     }

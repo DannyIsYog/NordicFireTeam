@@ -18,13 +18,14 @@ public class ClientController : MonoBehaviour
     private int type;
     private NavMeshAgent client;
     private bool followingPlayer;
+    private bool fighting = false;
     private Animator clientAnimator;
     private SpriteRenderer clientRenderer;
     [SerializeField] Vector3 target;
     [SerializeField] public PubManager pubs;
 
     private float timerAux;
-    private float textTime = 3.0f;
+    private float textTime = 4.0f;
     
 
     void Start()
@@ -56,15 +57,18 @@ public class ClientController : MonoBehaviour
             UpdateText(this.gameObject.name);
 
 
-        if (followingPlayer)
+        if (fighting)
         {
-            target = GameObject.FindGameObjectWithTag("Player").transform.position;
-            client.SetDestination(target);
+            if (followingPlayer)
+            {
+                target = GameObject.FindGameObjectWithTag("Player").transform.position;
+                client.SetDestination(target);
 
-            if (this.transform.position.x - target.x > 0)
-                clientRenderer.flipX = true;
-            else clientRenderer.flipX = false;
+                if (this.transform.position.x - target.x > 0)
+                    clientRenderer.flipX = true;
+                else clientRenderer.flipX = false;
 
+            }
         }
     }
 
@@ -77,8 +81,6 @@ public class ClientController : MonoBehaviour
         }
         else
         {
-
-
             if (WaitingForDrink)
                 UpdateText("Thank you");
             else UpdateText("That's not for me");
@@ -113,7 +115,6 @@ public class ClientController : MonoBehaviour
         {
             WaitingForDrink = true;
             clientAnimator.SetBool("HasBeer", false);
-
         }
     }
 
@@ -130,7 +131,7 @@ public class ClientController : MonoBehaviour
         client.SetDestination(target);
         clientAnimator.SetBool("Walking", true);
         clientAnimator.SetBool("HasBeer", false);
-           
+        UpdateText("I want to FIGHT!");
     }
 
 
@@ -153,6 +154,13 @@ public class ClientController : MonoBehaviour
 
     public void ReturnToSeat()
     {
+
+        if(type == 3)
+        {
+            fighting = false;
+            this.clientRenderer.color = new Color(1, 1, 1, 1);
+        }
+
         if (type == 2)
             followingPlayer = false;
 
@@ -166,6 +174,13 @@ public class ClientController : MonoBehaviour
     public void TVOn()
     {
         ReturnToSeat();
+    }
+
+    public void Fighting()
+    {
+        fighting = true;
+        this.clientRenderer.color = new Color(0, 0, 0, 0);
+        UpdateText(" ");
     }
 
     private void SelectAction()
