@@ -23,13 +23,16 @@ public class ClientController : MonoBehaviour
     [SerializeField] Vector3 target;
     [SerializeField] public PubManager pubs;
 
+    private float timerAux;
+    private float textTime = 3.0f;
+
     void Start()
     {
       
         this.clientText = this.GetComponent<TMPro.TextMeshPro>();
-        
-       
-        
+
+
+        timerAux = textTime;
         clientAnimator = this.GetComponentInParent<Animator>();
         clientRenderer = this.GetComponentInParent<SpriteRenderer>();
         pubs.TVOn += TVOn;
@@ -45,6 +48,12 @@ public class ClientController : MonoBehaviour
 
     void FixedUpdate()
     {
+
+        if (timerAux >= 0)
+            timerAux -= Time.deltaTime;
+        else
+            UpdateText(this.gameObject.name);
+
 
         if (followingPlayer)
         {
@@ -80,6 +89,7 @@ public class ClientController : MonoBehaviour
 
     public void UpdateText(string s)
     {
+        timerAux = textTime;
         clientText.text = s;
     }
 

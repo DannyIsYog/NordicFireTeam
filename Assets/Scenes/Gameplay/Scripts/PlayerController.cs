@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     public event Action FailedDelivery;
     public event Action Pickup;
     private GameObject goalUI;
+    private float textTimer = 3.0f;
 
 
     void Start()
@@ -31,6 +32,10 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+
+        if (textTimer >= 0)
+            textTimer -= Time.deltaTime;
+        else UpdateText("");
         // correct for diagonal movement with normalized
         if (!downed)
         {
@@ -95,6 +100,7 @@ public class PlayerController : MonoBehaviour
 
     public void UpdateText(string s)
     {
+        textTimer = 3.0f;
         playerText.text = s;
     }
 
