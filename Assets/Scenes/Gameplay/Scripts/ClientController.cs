@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 using TMPro;
+using UnityEngine.AI;
 
 public class ClientController : MonoBehaviour
 {
@@ -15,7 +17,10 @@ public class ClientController : MonoBehaviour
     private Places _place;
     public int _id;
     private bool TV;
-
+    private int type;
+    private NavMeshAgent client;
+    
+    [SerializeField] Transform target;
     [SerializeField] PubManager pubs;
 
     void Start()
@@ -29,12 +34,36 @@ public class ClientController : MonoBehaviour
         pubs.TVOn += WatchGame;
         pubs.TVOff += Fight;
         pubs.NewClient += CheckMyBeer;
+        
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+        client = this.GetComponentInParent<NavMeshAgent>();
+        client.updateRotation = false;
+        client.updateUpAxis = false;
+
+        type = 2;
+        Debug.Log("hello i'm type: " + type);
     }
 
     void FixedUpdate()
     {
-        if (Random.Range(0, 100) > 98 && TV == false)
-            Throw();    
+        if (type == 0 && TV == false) //stay in place
+        {
+            
+        }
+        else if (type == 1 && TV == false) //fight with each other 
+        {
+            //need to determine fightspots
+            //client.SetDestination(fightSpot.position);
+        }
+        else if (type == 2 && TV == false) //follow player
+        {
+            client.SetDestination(target.position);
+        }
+        else if (type == 3 && Random.Range(0, 100) > 98 && TV == false) //throw stuff at player
+        {
+            Throw();
+        }
+
     }
 
     public void ReceivedDrink()
@@ -70,6 +99,8 @@ public class ClientController : MonoBehaviour
     public void Fight()
     {
         TV = false;
+
+        
     }
 
     public void CheckMyBeer()

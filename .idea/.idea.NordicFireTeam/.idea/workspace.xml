@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c684264e-bcf9-4be6-be03-aefd7c84367b" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Gameplay/Scripts/GoFight.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <changedPaths>
+      <option value="$PROJECT_DIR$/Assets/Scenes/Gameplay/Scripts/AgentScript.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scenes/Gameplay/Scripts/GoFight.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scenes/Gameplay/Scripts/FollowPlayer.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scenes/Gameplay/Scripts/ClientController.cs" />
+    </changedPaths>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="TaskManager">
+    <servers />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+</project>
