@@ -8,10 +8,14 @@ public class PlayerController : MonoBehaviour
  
     float speed = 10;
     TMPro.TextMeshPro playerText;
+    SpriteRenderer playerSprite;
+    Animator playerAnimator;
 
     void Start()
     {
         playerText = this.GetComponentInChildren<TMPro.TextMeshPro>();
+        playerSprite = this.GetComponent<SpriteRenderer>();
+        playerAnimator = this.GetComponent<Animator>();
     }
 
     void Update()
@@ -30,8 +34,17 @@ public class PlayerController : MonoBehaviour
            
                 // else move normally
                 transform.position += moveInput.x * Vector3.right * speed * Time.deltaTime;
-           
+
+            if (moveInput.x < 0)
+            {
+                playerSprite.flipX = true;
+            }
+            else playerSprite.flipX = false;
         }
+
+        if (moveInput.x == 0 && moveInput.y == 0)
+            playerAnimator.SetBool("isWalking", false);
+        else playerAnimator.SetBool("isWalking", true);
     }
 
 
@@ -40,13 +53,16 @@ public class PlayerController : MonoBehaviour
         this.UpdateText("Press E to serve drink");
     }
 
+    public void NearDrink()
+    {
+        this.UpdateText("Press E to grab Beer");
+    }
+
     public void AwayFromClient()
     {
         this.UpdateText("I'm the Player");
     }
-
-
-   public void UpdateText(string s)
+    public void UpdateText(string s)
     {
         playerText.text = s;
     }
@@ -54,6 +70,18 @@ public class PlayerController : MonoBehaviour
     public void GotHit()
     {
         this.UpdateText("I got hit");
+    }
+
+    public void PickedUpDrink()
+    {
+        this.UpdateText("Another round");
+        playerAnimator.SetBool("HasBeer", true);
+    }
+
+    public void ServedDrink()
+    {
+        this.UpdateText("Enjooy");
+        playerAnimator.SetBool("HasBeer", false);
     }
 
 

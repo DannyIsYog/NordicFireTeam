@@ -9,7 +9,9 @@ public class PlayerColliderScript : MonoBehaviour
     TextMeshPro clientText;
     PlayerController playerController;
     private bool isNearClient;
+    private bool isNearDrink;
     private GameObject nearClient;
+    private GameObject nearDrink;
 
     void Start()
     {
@@ -27,9 +29,18 @@ public class PlayerColliderScript : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                ServeDrink();
+                playerController.ServedDrink();
+                nearClient.GetComponentInChildren<ClientController>().ReceivedDrink();
+
             }
-        }
+        
+        } else if(isNearDrink)
+               
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                playerController.PickedUpDrink();
+            }
+            
 
     }
 
@@ -42,6 +53,14 @@ public class PlayerColliderScript : MonoBehaviour
             isNearClient = true;
             nearClient = collision.gameObject;
         }
+
+
+        else if(collision.gameObject.tag == "Drink")
+        {
+            playerController.NearDrink();
+            isNearDrink = true;
+            nearClient = collision.gameObject;
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -49,16 +68,18 @@ public class PlayerColliderScript : MonoBehaviour
         {
             playerController.AwayFromClient();
             isNearClient = false;
-            nearClient = collision.gameObject;
+            nearClient = null;
+        }
+
+        else if (collision.gameObject.tag == "Drink")
+        {
+            playerController.AwayFromClient();
+            isNearDrink = false;
+            nearClient = null;
         }
     }
 
 
-    public void ServeDrink()
-    {
-        playerController.UpdateText("Enjoy that bitch");
-        nearClient.GetComponentInChildren<ClientController>().ReceivedDrink();
-    }
 
 }
 
