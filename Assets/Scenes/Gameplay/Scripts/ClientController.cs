@@ -11,7 +11,8 @@ public class ClientController : MonoBehaviour
     private bool waitingForDrink;
     public string clientName;
     public GameObject throwable;
-    
+    public float throwForce = 5.0f;
+
     void Start()
     {
         this.clientText = this.GetComponent<TMPro.TextMeshPro>();
@@ -46,7 +47,7 @@ public class ClientController : MonoBehaviour
 
         var bottlePosition = bottle.transform.position;
 
-        bottle.transform.GetComponent<Rigidbody2D>().AddForce((targetPosition - bottlePosition) * 10, ForceMode2D.Impulse);
+        bottle.transform.GetComponent<Rigidbody2D>().AddForce((targetPosition - bottlePosition) * throwForce, ForceMode2D.Impulse);
     }
 
 }

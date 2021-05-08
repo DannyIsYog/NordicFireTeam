@@ -51,5 +51,10 @@ public class PlayerController : MonoBehaviour
         playerText.text = s;
     }
 
+    public void GotHit()
+    {
+        this.UpdateText("I got hit");
+    }
+
 
 }
