@@ -76,6 +76,7 @@ public class PlayerController : MonoBehaviour
     public void GotHit()
     {
         this.UpdateText("I got hit");
+        playerAnimator.SetTrigger("Fall");
     }
 
     public void PickedUpDrink()
