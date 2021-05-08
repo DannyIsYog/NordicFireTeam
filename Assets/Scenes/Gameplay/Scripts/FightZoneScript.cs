@@ -90,7 +90,10 @@ public class FightZoneScript : MonoBehaviour
                 customer2 = collision.gameObject;
                 customer2.gameObject.GetComponentInChildren<ClientController>().Fighting();
                 StartFight();
-            }
+            } else
+                {
+                    collision.gameObject.GetComponentInChildren<ClientController>().Fighting();
+                }
     }
 
     void StartFight()

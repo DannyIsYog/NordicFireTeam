@@ -25,13 +25,15 @@ public class ClientController : MonoBehaviour
     [SerializeField] Vector3 target;
     [SerializeField] public PubManager pubs;
 
+    private bool walked = false;
+    private BoxCollider2D _collider;
     private float timerAux;
     private float textTime = 4.0f;
     
 
     void Start()
     {
-      
+        _collider = this.GetComponent<BoxCollider2D>();
         this.clientText = this.GetComponent<TMPro.TextMeshPro>();
 
 
@@ -51,7 +53,11 @@ public class ClientController : MonoBehaviour
 
     void FixedUpdate()
     {
-
+        if (walked && client.velocity.magnitude < 0.05f)
+        {
+            _collider.enabled = true;
+            clientAnimator.SetBool("Walking", false);
+        }
         if (timerAux >= 0)
             timerAux -= Time.deltaTime;
         else
@@ -88,6 +94,7 @@ public class ClientController : MonoBehaviour
 
     public void ReceivedDrink()
     {
+        
         if (followingPlayer)
         {
             ReturnToSeat();
@@ -117,7 +124,6 @@ public class ClientController : MonoBehaviour
         var bottle = Instantiate(prefab, this.transform);
         bottle.transform.position = this.transform.position;
         var targetPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
-
         var bottlePosition = bottle.transform.position;
         clientAnimator.SetBool("HasBeer", false);
         bottle.transform.GetComponent<Rigidbody2D>().AddForce((targetPosition - bottlePosition) * throwForce, ForceMode2D.Impulse);
@@ -174,10 +180,13 @@ public class ClientController : MonoBehaviour
       throwing = false;
         target = pubs.getPlace(this._id).transform.position;
         client.SetDestination(target);
+        
 
          if (this.transform.position.x - target.x > 0)
                 clientRenderer.flipX = true;
             else clientRenderer.flipX = false;
+        _collider.enabled = false;
+       walked = true;
     }
     public void TVOn()
     {
