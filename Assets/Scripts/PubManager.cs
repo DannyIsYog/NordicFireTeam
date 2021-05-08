@@ -98,14 +98,13 @@ public class PubManager : MonoBehaviour
 
     private void SortCustomers()
     {
-        Debug.Log(_total);
+        Debug.Log("Sorted Customers");
         for (int i = 0; i < _total; i++)
         {
             Places temp = Places[i];
             int randomIndex = UnityEngine.Random.Range(i, _total);
             Places[i] = Places[randomIndex];
             Places[randomIndex] = temp;
-            Debug.Log(Places[i]._id);
         }
     }
 

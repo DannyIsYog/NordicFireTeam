@@ -73,7 +73,10 @@ public class ClientController : MonoBehaviour
                 UpdateText("Thank you");
             else UpdateText("That's not for me");
         }
-        }
+
+        clientAnimator.SetBool("HasBeer", true);
+
+    }
 
     public void UpdateText(string s)
     {
@@ -87,7 +90,7 @@ public class ClientController : MonoBehaviour
         var targetPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
 
         var bottlePosition = bottle.transform.position;
-
+        clientAnimator.SetBool("HasBeer", false);
         bottle.transform.GetComponent<Rigidbody2D>().AddForce((targetPosition - bottlePosition) * throwForce, ForceMode2D.Impulse);
     }
 
@@ -96,16 +99,20 @@ public class ClientController : MonoBehaviour
         if(pubs.CurrentClient._id == _id)
         {
             WaitingForDrink = true;
+            clientAnimator.SetBool("HasBeer", false);
+
         }
     }
 
     public void DrinkBeer()
     {
         //Activate Animator Booolean
+        clientAnimator.SetBool("HasBeer", true);
     }
 
     public void Fight()
     {
+        clientAnimator.SetBool("HasBeer", false);
         //Activate Fight Routine Booolean
     }
 
@@ -117,6 +124,7 @@ public class ClientController : MonoBehaviour
         client.SetDestination(target);
         followingPlayer = true;
         clientAnimator.SetBool("Walking", true);
+        clientAnimator.SetBool("HasBeer", false);
         UpdateText("I need BEEER!!");
 
     }
