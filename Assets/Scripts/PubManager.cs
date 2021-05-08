@@ -10,6 +10,7 @@ public class PubManager : MonoBehaviour
     [SerializeField] public float RandomMin;
     private List<ClientController> Clients;
     private List<Places> Places;
+    private List<GameObject> fightZones;
     private List<string> irishNames;
 
     private TextMeshProUGUI goalClient;
@@ -159,7 +160,7 @@ public class PubManager : MonoBehaviour
         _randomNumClient = UnityEngine.Random.Range(0, _total);
         CurrentClient = Clients[_randomNumClient];
         NewClient?.Invoke();
-        goalClient.text = CurrentClient.name;
+        goalClient.text = "Give this to " + CurrentClient.name;
         CurrentClient.WaitingForDrink = true;
     }
 
