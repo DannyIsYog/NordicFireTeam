@@ -37,7 +37,7 @@ public class PubManager : MonoBehaviour
         irishNames= new List<string>()
         {
        "O'Sullivan" ,"Mc Gregor", 
-              "O'Brien" ,
+        "O'Brien" ,
             "O’Neill" ,
              "O’Carroll",
              "O’Reilly" ,
@@ -62,7 +62,12 @@ public class PubManager : MonoBehaviour
            "Machado",
            "Sousa",
            "O'Leary",
-           "McDonnell"
+           "McDonnell",
+           "Frans",
+           "Rine",
+           "Engberg",
+           "Sigismund",
+           "Amanda"
 
         };
 
