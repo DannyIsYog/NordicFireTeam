@@ -19,7 +19,8 @@ public class PlayerColliderScript : MonoBehaviour
         clientText.text = "I'm the Player";
         playerController = this.GetComponentInParent<PlayerController>();
         isNearClient = false;
-    }
+        isNearDrink = false;
+}
 
     // Update is called once per frame
     void Update()
@@ -61,6 +62,12 @@ public class PlayerColliderScript : MonoBehaviour
             isNearDrink = true;
             nearClient = collision.gameObject;
         }
+
+        else if (collision.gameObject.tag == "Puddle")
+        {
+           
+            playerController.nearPuddle = true;
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -76,6 +83,11 @@ public class PlayerColliderScript : MonoBehaviour
             playerController.AwayFromClient();
             isNearDrink = false;
             nearClient = null;
+        }
+
+        else if (collision.gameObject.tag == "Puddle")
+        {
+            playerController.nearPuddle = false;
         }
     }
 

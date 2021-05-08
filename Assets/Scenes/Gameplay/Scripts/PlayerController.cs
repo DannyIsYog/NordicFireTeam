@@ -6,10 +6,11 @@ public class PlayerController : MonoBehaviour
 {
 
  
-    float speed = 10;
+    public float speed = 10;
     TMPro.TextMeshPro playerText;
     SpriteRenderer playerSprite;
     Animator playerAnimator;
+    public bool nearPuddle = false;
 
     void Start()
     {
@@ -22,6 +23,10 @@ public class PlayerController : MonoBehaviour
     {
         // correct for diagonal movement with normalized
         var moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+        var tempSpeed = speed;
+        if (nearPuddle)
+            tempSpeed *= 2;
+        else tempSpeed = speed;
 
         if (moveInput.y != 0)
         {
@@ -31,9 +36,10 @@ public class PlayerController : MonoBehaviour
 
         if (moveInput.x != 0)
         {
-           
+
+          
                 // else move normally
-                transform.position += moveInput.x * Vector3.right * speed * Time.deltaTime;
+                transform.position += moveInput.x * Vector3.right * tempSpeed * Time.deltaTime;
 
             if (moveInput.x < 0)
             {
@@ -83,6 +89,7 @@ public class PlayerController : MonoBehaviour
         this.UpdateText("Enjooy");
         playerAnimator.SetBool("HasBeer", false);
     }
+
 
 
 }
