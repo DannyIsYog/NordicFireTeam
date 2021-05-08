@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class PlayerController : MonoBehaviour
     SpriteRenderer playerSprite;
     Animator playerAnimator;
     public bool nearPuddle = false;
+
+    public event Action Delivery;
 
     void Start()
     {
@@ -89,6 +92,7 @@ public class PlayerController : MonoBehaviour
     {
         this.UpdateText("Enjooy");
         playerAnimator.SetBool("HasBeer", false);
+        Delivery?.Invoke();
     }
 
 
