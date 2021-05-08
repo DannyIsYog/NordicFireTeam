@@ -8,7 +8,8 @@ public class PubManager : MonoBehaviour
     [SerializeField] public float RandomMax;
     [SerializeField] public float RandomMin;
     [SerializeField] public GameObject[] Customers;
-    public int[] places;
+    [SerializeField] public Places[] places;
+
     private int _total;
     public bool TV;
     private float _randomNum;
@@ -25,10 +26,6 @@ public class PubManager : MonoBehaviour
         _randomNum = UnityEngine.Random.Range(RandomMin, RandomMax);
 
         _total = Customers.Length;
-        for(int i = 0; i < _total; i++)
-        {
-            places[i] = i;
-        }
         SortCustomers();
     }
 
@@ -45,11 +42,11 @@ public class PubManager : MonoBehaviour
     {
         for (int i = 0; i < _total; i++)
         {
-            int temp = places[i];
+            Places temp = places[i];
             int randomIndex = UnityEngine.Random.Range(i, _total);
             places[i] = places[randomIndex];
             places[randomIndex] = temp;
-            Debug.Log(places[i]);
+            Debug.Log(places[i]._id);
         }
     }
 

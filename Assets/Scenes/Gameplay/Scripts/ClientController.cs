@@ -12,6 +12,8 @@ public class ClientController : MonoBehaviour
     public string clientName;
     public GameObject throwable;
     public float throwForce = 5.0f;
+    private Places _place;
+    private int _id;
 
     void Start()
     {
