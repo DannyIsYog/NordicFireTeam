@@ -17,7 +17,6 @@ public class ClientController : MonoBehaviour
         clientText.text = "Awaiting Drink";
         waitingForDrink = Random.Range(0, 10) > 5;
         UpdateText(clientName);
-
     }
 
     public void ReceivedDrink()
