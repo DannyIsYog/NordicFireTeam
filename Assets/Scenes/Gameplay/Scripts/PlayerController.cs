@@ -21,6 +21,28 @@ public class PlayerController : MonoBehaviour
     private float textTimer = 3.0f;
 
 
+    List<string> fallLines = new List<string>()
+    {
+        "I got hit",
+        "Call an ambulance",
+        "By Odin's Beard!"
+    };
+
+    List<string> serveLines = new List<string>()
+    {
+        "You got served",
+        "There you go",
+        "Drink it all"
+    };
+
+    List<string> beerLines = new List<string>()
+    {
+        "I need another one",
+        "Save one for me",
+        "Another round!",
+        "Enjoy!!"
+    };
+
     void Start()
     {
         playerText = this.GetComponentInChildren<TMPro.TextMeshPro>();
@@ -106,7 +128,9 @@ public class PlayerController : MonoBehaviour
 
     public void GotHit()
     {
-        this.UpdateText("I got hit");
+
+        var r = UnityEngine.Random.Range(0, fallLines.Count);
+        this.UpdateText(fallLines[r]);
         playerAnimator.SetTrigger("Fall");
         playerAnimator.SetBool("HasPlate", false);
         playerAnimator.SetBool("HasBeer", false);
@@ -128,7 +152,8 @@ public class PlayerController : MonoBehaviour
     {
         if (!hasBeer)
         {
-            this.UpdateText("Another round");
+            var r = UnityEngine.Random.Range(0, beerLines.Count);
+            this.UpdateText(beerLines[r]);
             hasBeer = true;
             playerAnimator.SetBool("HasBeer", true);
             playerAnimator.SetBool("HasPlate", true);
@@ -140,7 +165,8 @@ public class PlayerController : MonoBehaviour
     {
         if (hasBeer)
         {
-            this.UpdateText("Enjooy");
+            var r = UnityEngine.Random.Range(0, serveLines.Count);
+            this.UpdateText(serveLines[r]);
             playerAnimator.SetBool("HasBeer", false);
             hasBeer = false;
             Delivery?.Invoke();
@@ -151,7 +177,8 @@ public class PlayerController : MonoBehaviour
     {
         if (hasBeer)
         {
-            this.UpdateText("Enjooy");
+            var r = UnityEngine.Random.Range(0, serveLines.Count);
+            this.UpdateText(serveLines[r]);
             playerAnimator.SetBool("HasBeer", false);
             hasBeer = false;
             FailedDelivery?.Invoke();

@@ -11,25 +11,42 @@ public class FightZoneScript : MonoBehaviour
 
     private float moveX;
     private float moveY;
+    private bool waitingForClients = false;
+    private bool started = false;
+
+    private SpriteRenderer spriteRenderer;
+    private GameObject customer1;
+    private GameObject customer2;
+
+    private PubManager pubManager;
     // Start is called before the first frame update
     void Start()
     {
         NextAction();
+        pubManager = GameObject.Find("PubManager").GetComponent<PubManager>();
+        pubManager.TVOn += StopFight;
+        pubManager.TVOff += Activate;
+        spriteRenderer = this.GetComponent<SpriteRenderer>();
+        StopFight();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (timer >= 0)
+
+        if (started)
         {
-            this.transform.Translate(0.0025f * moveX, 0.0025f * moveY, 0.0f);
+            if (timer >= 0)
+            {
+                this.transform.Translate(0.0025f * moveX, 0.0025f * moveY, 0.0f);
+            }
+            else NextAction();
+
+            this.transform.Rotate(0f, 0f, 0.05f);
+
+
         }
-        else NextAction();
-
-        this.transform.Rotate(0f, 0f, 0.05f);   
-        
-
-    
     }
 
     void NextAction()
@@ -52,6 +69,38 @@ public class FightZoneScript : MonoBehaviour
 
     }
 
+
+    public void Activate()
+    {
+        waitingForClients = true;
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Client")
+            if (customer1 == null)
+            {
+                customer1 = collision.gameObject;
+            }
+            else if (customer2 == null && collision.gameObject != customer1)
+            {
+                customer2 = collision.gameObject;
+                StartFight();
+            }
+    }
+
+    void StartFight()
+    {
+        started = true;
+        spriteRenderer.color = new Color(1, 1, 1,1);
+    }
+
+    public void StopFight()
+    {
+        started = false;
+        spriteRenderer.color = new Color(0, 0, 0, 0);
+    }
 
 
 

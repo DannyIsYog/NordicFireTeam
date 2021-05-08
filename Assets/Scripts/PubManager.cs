@@ -10,7 +10,7 @@ public class PubManager : MonoBehaviour
     [SerializeField] public float RandomMin;
     private List<ClientController> Clients;
     private List<Places> Places;
-    private List<GameObject> fightZones;
+    private List<FightZoneScript> fightZones;
     private List<string> irishNames;
 
     private TextMeshProUGUI goalClient;
@@ -70,10 +70,17 @@ public class PubManager : MonoBehaviour
         goalClient = GameObject.Find("UIGoal").GetComponent<TextMeshProUGUI>();
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         TV = true;
+
+        var fights = GameObject.FindGameObjectsWithTag("FightZone");
+        fightZones = new List<FightZoneScript>();
+        foreach(var f in fights)
+        {
+            var fController = f.GetComponent<FightZoneScript>();
+            fightZones.Add(fController);
+        }
         _randomNum = UnityEngine.Random.Range(RandomMin, RandomMax);
         var objs = GameObject.FindGameObjectsWithTag("Seat");
         var index = 0;
-
         Places = new List<Places>();
         Clients = new List<ClientController>();
         foreach(var obj in objs)
