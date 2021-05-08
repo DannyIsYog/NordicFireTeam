@@ -235,15 +235,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82c0784606c661b4fbbad513a1fe33f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RandomMax: 20
-  RandomMin: 10
   Image: {fileID: 2022033198}
   _clipsTV:
   - {fileID: 8300000, guid: 2644136cc3fa43743aac57bf29a618e0, type: 3}
   - {fileID: 8300000, guid: 8931ab4e646f1004ca9c6c8e374ca7d6, type: 3}
   _audioTV: {fileID: 1460665981}
   _audioMusic: {fileID: 763660892}
-  TVOn: 0
+  _animatorMusic: {fileID: 763660894}
+  Pubs: {fileID: 2022033200}
 --- !u!4 &749845618
 Transform:
   m_ObjectHideFlags: 0
@@ -268,6 +267,7 @@ GameObject:
   m_Component:
   - component: {fileID: 763660893}
   - component: {fileID: 763660892}
+  - component: {fileID: 763660894}
   m_Layer: 0
   m_Name: MusicAudio
   m_TagString: Untagged
@@ -385,6 +385,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &763660894
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763660891}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dffd9895d7959b6458f3875e78542ea6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1460665980
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,7 +433,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.436
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -524,7 +543,7 @@ GameObject:
   - component: {fileID: 2022033198}
   - component: {fileID: 2022033200}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: PubManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -607,6 +626,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb85c4d92972dd429d321ed744aa4c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RandomMax: 20
+  RandomMin: 10
   Customers:
   - {fileID: 0}
   - {fileID: 0}
@@ -619,3 +640,4 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   places: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+  TV: 0
