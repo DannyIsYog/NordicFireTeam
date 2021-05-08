@@ -7,16 +7,20 @@ public class PubManager : MonoBehaviour
 {
     [SerializeField] public float RandomMax;
     [SerializeField] public float RandomMin;
-    [SerializeField] public GameObject[] Customers;
+    [SerializeField] public ClientController[] Clients;
     [SerializeField] public Places[] places;
 
+    public ClientController CurrentClient;
     private int _total;
     public bool TV;
     private float _randomNum;
+    private int _randomNumClient;
 
     #region Events
     public event Action TVOn;
     public event Action TVOff;
+
+    public event Action NewClient;
     #endregion
 
     // Start is called before the first frame update
@@ -25,7 +29,7 @@ public class PubManager : MonoBehaviour
         TV = true;
         _randomNum = UnityEngine.Random.Range(RandomMin, RandomMax);
 
-        _total = Customers.Length;
+        _total = Clients.Length;
         SortCustomers();
     }
 
@@ -69,5 +73,12 @@ public class PubManager : MonoBehaviour
             _randomNum = UnityEngine.Random.Range(RandomMin, RandomMax);
             _randomNum += Time.unscaledTime;
         }
+    }
+
+    void ChooseNextClient()
+    {
+        _randomNumClient = UnityEngine.Random.Range(0, _total);
+        CurrentClient = Clients[_randomNumClient];
+        NewClient?.Invoke();
     }
 }

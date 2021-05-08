@@ -8,7 +8,7 @@ public class ClientController : MonoBehaviour
     // Start is called before the first frame update
 
     TextMeshPro clientText;
-    private bool waitingForDrink;
+    private bool WaitingForDrink;
     public string clientName;
     public GameObject throwable;
     public float throwForce = 5.0f;
@@ -23,11 +23,12 @@ public class ClientController : MonoBehaviour
         TV = true;
         this.clientText = this.GetComponent<TMPro.TextMeshPro>();
         clientText.text = "Awaiting Drink";
-        waitingForDrink = Random.Range(0, 10) > 5;
+        WaitingForDrink = Random.Range(0, 10) > 5;
         UpdateText(clientName);
 
         pubs.TVOn += WatchGame;
         pubs.TVOff += Fight;
+        pubs.NewClient += CheckMyBeer;
     }
 
     void FixedUpdate()
@@ -38,7 +39,7 @@ public class ClientController : MonoBehaviour
 
     public void ReceivedDrink()
     {
-        if(waitingForDrink)
+        if(WaitingForDrink)
         UpdateText("Thank you");
         else UpdateText("That's not for me");
     }
@@ -69,6 +70,14 @@ public class ClientController : MonoBehaviour
     public void Fight()
     {
         TV = false;
+    }
+
+    public void CheckMyBeer()
+    {
+        if(pubs.CurrentClient._id == _id)
+        {
+            WaitingForDrink = true;
+        }
     }
 
 }
