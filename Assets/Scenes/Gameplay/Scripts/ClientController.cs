@@ -9,11 +9,15 @@ public class ClientController : MonoBehaviour
 
     TextMeshPro clientText;
     private bool waitingForDrink;
-
+    public string clientName;
+    
     void Start()
     {
         this.clientText = this.GetComponent<TMPro.TextMeshPro>();
         clientText.text = "Awaiting Drink";
+        waitingForDrink = Random.Range(0, 10) > 5;
+        UpdateText(clientName);
+
     }
 
     public void ReceivedDrink()
