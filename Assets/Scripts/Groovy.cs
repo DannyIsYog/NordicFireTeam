@@ -10,10 +10,12 @@ public class Groovy : MonoBehaviour
     [SerializeField] public SpriteRenderer Image;
     [SerializeField] public AudioClip[] _clipsTV;
     [SerializeField] public AudioClip[] _clipsPlayer;
+    [SerializeField] public AudioClip[] _clipsCrowd;
 
     [SerializeField] public AudioSource _audioTV;
     [SerializeField] public AudioSource _audioPlayer;
     [SerializeField] public AudioSource _audioMusic;
+    [SerializeField] public AudioSource _audioCrowd;
 
     [SerializeField] public Animator _animatorMusic;
     public PubManager Pubs;
@@ -30,6 +32,7 @@ public class Groovy : MonoBehaviour
         Pubs.TVOff += TurnTVOff;
         _player.Delivery += Score;
         _player.Pickup += PickupBeer;
+        _player.Fall += Fall;
     }
 
     void Update()
@@ -42,6 +45,7 @@ public class Groovy : MonoBehaviour
         _animatorMusic.SetTrigger("Switch");
         _audioTV.clip = _clipsTV[0];
         _audioTV.Play();
+        Cheering();
     }
 
     void TurnTVOff()
@@ -55,14 +59,23 @@ public class Groovy : MonoBehaviour
     {
         _audioPlayer.clip = _clipsPlayer[1];
         _audioPlayer.Play();
-        Debug.Log("score");
     }
 
     void PickupBeer()
     {
         _audioPlayer.clip = _clipsPlayer[0];
         _audioPlayer.Play();
-        Debug.Log("score");
+    }
+    void Cheering()
+    {
+        _audioCrowd.clip = _clipsCrowd[0];
+        _audioCrowd.Play();
+    }
+
+    void Fall()
+    {
+        _audioPlayer.clip = _clipsPlayer[2];
+        _audioPlayer.Play();
     }
 
 
