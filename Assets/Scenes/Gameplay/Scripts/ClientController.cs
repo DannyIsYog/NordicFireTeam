@@ -160,6 +160,7 @@ public class ClientController : MonoBehaviour
     {
         ReturnToSeat();
     }
+
     private void SelectAction()
     {
         switch (type)
