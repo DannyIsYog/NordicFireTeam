@@ -54,6 +54,12 @@ TagManager:
   - name: Clients
     uniqueID: 203046999
     locked: 0
+  - name: Player
+    uniqueID: 2109100551
+    locked: 0
   - name: TablesAndDecor
     uniqueID: 2673437573
+    locked: 0
+  - name: PlayerText
+    uniqueID: 4262688101
     locked: 0
