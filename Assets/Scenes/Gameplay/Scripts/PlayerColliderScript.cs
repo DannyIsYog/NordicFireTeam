@@ -33,17 +33,20 @@ public class PlayerColliderScript : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                if (nearClient.GetComponentInChildren<ClientController>().WaitingForDrink)
-                
-                    playerController.ServedDrink();
-                   
-                
-                else  playerController.FailedServedDrink();
+
+                if (playerController.hasBeer)
+                {
+                    if (nearClient.GetComponentInChildren<ClientController>().WaitingForDrink)
+
+                        playerController.ServedDrink();
 
 
-                if(playerController.hasBeer)
-                    nearClient.GetComponentInChildren<ClientController>().ReceivedDrink();
-             }
+                    else playerController.FailedServedDrink();
+
+
+                        nearClient.GetComponentInChildren<ClientController>().ReceivedDrink();
+                }
+            }
         
         } 
 

@@ -26,7 +26,8 @@ public class PlayerController : MonoBehaviour
     {
         "I got hit",
         "Call an ambulance",
-        "By St.Patrick's Beard!"
+        "By St.Patrick's Beard!",
+        "Not again!"
     };
 
     List<string> serveLines = new List<string>()
@@ -100,14 +101,14 @@ public class PlayerController : MonoBehaviour
     {
         if (hasBeer)
             this.UpdateText("Press E to serve drink", 2);
-        else this.UpdateText("You have nothing to serve", 2);
+        else this.UpdateText("You have nothing to serve", 1);
     }
 
     public void NearDrink()
     {
         if (!hasBeer)
             this.UpdateText("Press E to grab Beer", 3);
-        else this.UpdateText("You already have a Beer", 2);
+        else this.UpdateText("You already have a Beer", 1);
 
         goalUI.SetActive(true);
     }

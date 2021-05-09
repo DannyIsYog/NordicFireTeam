@@ -89,7 +89,7 @@ public class ClientController : MonoBehaviour
         {
             var r = Random.Range(0, 100);
             var r2 = Random.Range(0, 100);
-            if (r > 98 && r2 > 70)
+            if (r > 98 && r2 > 85)
                 Throw();
         }
 
@@ -113,6 +113,7 @@ public class ClientController : MonoBehaviour
         }
 
         clientAnimator.SetBool("HasBeer", true);
+        DrinkBeer();
 
     }
 
