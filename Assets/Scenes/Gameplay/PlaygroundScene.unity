@@ -25976,7 +25976,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5801166319186014900, guid: 58b67bd5524b3c44989391872130fc00, type: 3}
       propertyPath: m_Name
-      value: MusicManager (1)
+      value: MusicManager
       objectReference: {fileID: 0}
     - target: {fileID: 5801166319186014901, guid: 58b67bd5524b3c44989391872130fc00, type: 3}
       propertyPath: Pubs
