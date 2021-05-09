@@ -35,6 +35,7 @@
             <e p="Scripts" t="Include">
               <e p="ClientController.cs" t="Include" />
               <e p="DrinkScript.cs" t="Include" />
+              <e p="FightZoneScript.cs" t="Include" />
               <e p="FollowPlayer.cs" t="Include" />
               <e p="GoFight.cs" t="Include" />
               <e p="PlayerColliderScript.cs" t="Include" />
@@ -47,6 +48,8 @@
           <e p="Groovy.cs" t="Include" />
           <e p="Places.cs" t="Include" />
           <e p="PubManager.cs" t="Include" />
+          <e p="ScoreManager.cs" t="Include" />
+          <e p="Timer.cs" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">
