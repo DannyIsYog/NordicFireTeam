@@ -13,6 +13,7 @@ public class Timer : MonoBehaviour
     void Start()
     {
         _startTime = Time.time;
+        Debug.Log(_startTime);
     }
 
     // Update is called once per frame
@@ -22,7 +23,7 @@ public class Timer : MonoBehaviour
         {
             return;
         }
-        float tt = 5400 - Time.time * 30f - _startTime;
+        float tt = 5400 - (Time.time - _startTime) * 22.5f;
         string minutes = ((int)tt / 60).ToString();
         string seconds = ((int)tt % 60).ToString();
 
