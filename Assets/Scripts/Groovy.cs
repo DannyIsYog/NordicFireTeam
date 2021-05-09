@@ -55,6 +55,7 @@ public class Groovy : MonoBehaviour
         _animatorMusic.SetTrigger("Switch");
         _audioTV.clip = _clipsTV[1];
         _audioTV.Play();
+        Booing();
     }
 
     void Score()
@@ -71,6 +72,12 @@ public class Groovy : MonoBehaviour
     void Cheering()
     {
         _audioCrowd.clip = _clipsCrowd[0];
+        _audioCrowd.Play();
+    }
+
+    void Booing()
+    {
+        _audioCrowd.clip = _clipsCrowd[1];
         _audioCrowd.Play();
     }
 
