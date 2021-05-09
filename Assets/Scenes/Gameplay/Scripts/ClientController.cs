@@ -35,7 +35,7 @@ public class ClientController : MonoBehaviour
 
     void Start()
     {
-        _probabilities = new float[3][];
+        _probabilities = new float[7][];
         PopulateProbabilities();
         _collider = this.GetComponent<BoxCollider2D>();
         this.clientText = this.GetComponent<TMPro.TextMeshPro>();
@@ -89,7 +89,7 @@ public class ClientController : MonoBehaviour
         {
             var r = Random.Range(0, 100);
             var r2 = Random.Range(0, 100);
-            if (r > 98 && r2 > 95)
+            if (r > 98 && r2 > 50)
                 Throw();
         }
 
@@ -212,22 +212,18 @@ public class ClientController : MonoBehaviour
         {
 
             case 1:
-                Debug.Log("vou beber");
                 DrinkBeer();
                 break;
 
             case 2:
-                Debug.Log("vou atirar");
                 throwing = true;
                 break;
 
             case 3:
-                Debug.Log("vou lutar");
                 Fight();
                 break;
 
             case 4:
-                Debug.Log("vou seguir");
                 FollowPlayer();
                 break;
         }
@@ -236,8 +232,12 @@ public class ClientController : MonoBehaviour
     void PopulateProbabilities()
     {
         _probabilities[0] = new float[4] {  1f, .1f, 0, 0 };
-        _probabilities[1] = new float[4] {  1f, .4f, .2f, 0 };
-        _probabilities[2] = new float[4] {  1f, .6f, .4f, .2f };
+        _probabilities[1] = new float[4] {  1f, .2f, .4f, 0 };
+        _probabilities[2] = new float[4] {  1f, .4f, .6f, .1f };
+        _probabilities[3] = new float[4] { 1f, .6f, .8f, .3f };
+        _probabilities[4] = new float[4] { .9f, .8f, .8f, .5f };
+        _probabilities[3] = new float[4] {.6f, 1f, .8f, .7f };
+        _probabilities[4] = new float[4] { .2f, 1f, .8f, .8f };
     }
 
     void ChooseAction()
