@@ -89,7 +89,7 @@ public class ClientController : MonoBehaviour
         {
             var r = Random.Range(0, 100);
             var r2 = Random.Range(0, 100);
-            if (r > 98 && r2 > 50)
+            if (r > 98 && r2 > 70)
                 Throw();
         }
 
