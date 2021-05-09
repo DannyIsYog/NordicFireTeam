@@ -17,6 +17,7 @@ public class PubManager : MonoBehaviour
     private List<Places> Places;
     private List<FightZoneScript> fightZones;
     public List<GameObject> throwablePrefabs;
+    public List<Circuit> Circuits;
     private List<string> irishNames;
 
     //Controllers
@@ -40,6 +41,10 @@ public class PubManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        foreach (Circuit i in Circuits)
+        {
+            i.Repairs += SwapMusicState;
+        }
         Phase = 0;
         _TVLight = GameObject.FindGameObjectWithTag("TVLight");
         irishNames= new List<string>()
@@ -122,7 +127,7 @@ public class PubManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.unscaledTime >= _randomNum)
+        if (Time.unscaledTime >= _randomNum && TV)
         {
             SwapMusicState();
         }
@@ -160,10 +165,10 @@ public class PubManager : MonoBehaviour
         {
             TVOff?.Invoke();
             TV = false;
-            _randomNum = UnityEngine.Random.Range(RandomMin, RandomMax);
-            _randomNum += Time.unscaledTime;
+            //_randomNum = UnityEngine.Random.Range(RandomMin, RandomMax);
+            //_randomNum += Time.unscaledTime;
             _TVLight.SetActive(false);
-
+            CircuitFry();
         }
         else
         {
@@ -192,6 +197,12 @@ public class PubManager : MonoBehaviour
     public Places getPlace(int id)
     {
         return Places[id];
+    }
+
+    void CircuitFry()
+    {
+        int randoms = UnityEngine.Random.Range(0, Circuits.Count);
+        Circuits[randoms].Fry();
     }
 
   

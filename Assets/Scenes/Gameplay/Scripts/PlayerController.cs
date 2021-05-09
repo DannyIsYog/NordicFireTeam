@@ -189,6 +189,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void NearCircuit(bool fried)
+    {
+        if (fried)
+            this.UpdateText("Press E to repair Circuit");
+        else this.UpdateText("This Circuit is fine");
+    }
+
 
 
 

@@ -10,8 +10,11 @@ public class PlayerColliderScript : MonoBehaviour
     PlayerController playerController;
     private bool isNearClient;
     private bool isNearDrink;
+    private bool isNearCircuit;
+    private bool isFried;
     private GameObject nearClient;
     private GameObject nearDrink;
+    private Circuit nearCircuit;
 
     void Start()
     {
@@ -42,11 +45,22 @@ public class PlayerColliderScript : MonoBehaviour
                     nearClient.GetComponentInChildren<ClientController>().ReceivedDrink();
              }
         
-        } else if(isNearDrink)
-               
+        } 
+
+        else if (isNearDrink)
+        {
             if (Input.GetKeyDown(KeyCode.E))
             {
                 playerController.PickedUpDrink();
+            }
+        }
+
+        else if (isNearCircuit && nearCircuit.fried)
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    nearCircuit.Repair();
+                }
             }
             
 
@@ -74,6 +88,14 @@ public class PlayerColliderScript : MonoBehaviour
         {
            
             playerController.nearPuddle = true;
+        }
+
+        else if (collision.gameObject.tag == "Circuit")
+        {
+            isFried = collision.gameObject.GetComponent<Circuit>().fried;
+            playerController.NearCircuit(isFried);
+            isNearCircuit = true;
+            nearCircuit = collision.gameObject.GetComponent<Circuit>();
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
