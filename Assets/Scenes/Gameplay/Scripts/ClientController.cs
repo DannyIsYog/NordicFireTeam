@@ -13,7 +13,7 @@ public class ClientController : MonoBehaviour
     public bool WaitingForDrink;
    
     public GameObject throwable;
-    public float throwForce = 5.0f;
+    public float throwForce = 7.0f;
     public int _id = 0;
     private int type;
     private NavMeshAgent client;
@@ -231,7 +231,7 @@ public class ClientController : MonoBehaviour
 
     void PopulateProbabilities()
     {
-        _probabilities[0] = new float[4] {  1f, .1f, 0, 0 };
+        _probabilities[0] = new float[4] {  1f, .2f, 0, 0 };
         _probabilities[1] = new float[4] {  1f, .2f, .4f, 0 };
         _probabilities[2] = new float[4] {  1f, .4f, .6f, .1f };
         _probabilities[3] = new float[4] { 1f, .6f, .8f, .3f };
