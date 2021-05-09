@@ -9,6 +9,12 @@ public class Timer : MonoBehaviour
     public Image image;
     public TextMeshProUGUI timerText;
     private float _startTime;
+
+    public GameObject EndingScreen;
+
+    public GameObject scoreText;
+
+    public GameObject ScoreManager;
     private bool finnished = false;
     void Start()
     {
@@ -21,13 +27,18 @@ public class Timer : MonoBehaviour
     {
         if (finnished)
         {
-            return;
+            scoreText.GetComponent<TextMeshPro>().text = "" + ScoreManager.GetComponent<ScoreManager>().getScore();
+            EndingScreen.SetActive(false);
         }
-        float tt = 5400 - (Time.time - _startTime) * 22.5f;
+        float tt = 5400 - (Time.time - _startTime) * 1000f;
         string minutes = ((int)tt / 60).ToString();
         string seconds = ((int)tt % 60).ToString();
 
         timerText.text = minutes + ":" + seconds;
+
+        if (tt <= 0f) {
+            finnished = true;
+        }
     }
 
     public void End()
