@@ -56,7 +56,7 @@ MonoBehaviour:
   _clipsCrowd:
   - {fileID: 8300000, guid: 45695fb1ba87bc64ba54ce612c2a51de, type: 3}
   - {fileID: 8300000, guid: 2e41e544aa42c1949b35808f89c5071c, type: 3}
-  - {fileID: 8300000, guid: 22cdea51f10c38a408f0efec1d30debc, type: 3}
+  - {fileID: 8300000, guid: b6da5c577a434704eac86bcfd5254a13, type: 3}
   _clipsMusic:
   - {fileID: 8300000, guid: 1df42e1fc4b92f24a8017b3e71c387fe, type: 3}
   - {fileID: 8300000, guid: 1905303550bc4eb4484787a6d54cc047, type: 3}
