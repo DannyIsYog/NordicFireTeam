@@ -72,7 +72,6 @@ public class FightZoneScript : MonoBehaviour
 
     public void Activate()
     {
-        Debug.Log("Activated");
         waitingForClients = true;
     }
 
@@ -98,7 +97,15 @@ public class FightZoneScript : MonoBehaviour
                     collision.gameObject.GetComponentInChildren<ClientController>().Fighting();
                     StartFight();
                 }
+           
+        }
 
+        if (started)
+        {
+            if (collision.gameObject.tag == "Player")
+            {
+                collision.gameObject.GetComponent<PlayerController>().GotHit();
+            }
         }
     }
 

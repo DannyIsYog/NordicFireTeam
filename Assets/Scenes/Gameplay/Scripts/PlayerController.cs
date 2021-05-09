@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
 
         if (textTimer >= 0)
             textTimer -= Time.deltaTime;
-        else UpdateText("");
+        else UpdateText("", 1);
         // correct for diagonal movement with normalized
         if (!downed)
         {
@@ -99,15 +99,15 @@ public class PlayerController : MonoBehaviour
     public void NearClient()
     {
         if (hasBeer)
-            this.UpdateText("Press E to serve drink");
-        else this.UpdateText("You have nothing to serve");
+            this.UpdateText("Press E to serve drink", 2);
+        else this.UpdateText("You have nothing to serve", 2);
     }
 
     public void NearDrink()
     {
         if (!hasBeer)
-            this.UpdateText("Press E to grab Beer");
-        else this.UpdateText("You already have a Beer");
+            this.UpdateText("Press E to grab Beer", 3);
+        else this.UpdateText("You already have a Beer", 2);
 
         goalUI.SetActive(true);
     }
@@ -122,9 +122,9 @@ public class PlayerController : MonoBehaviour
         goalUI.SetActive(false);
     }
 
-    public void UpdateText(string s)
+    public void UpdateText(string s, int time)
     {
-        textTimer = 3.0f;
+        textTimer = time;
         playerText.text = s;
     }
 
@@ -132,7 +132,7 @@ public class PlayerController : MonoBehaviour
     {
 
         var r = UnityEngine.Random.Range(0, fallLines.Count);
-        this.UpdateText(fallLines[r]);
+        this.UpdateText(fallLines[r], 4);
         playerAnimator.SetTrigger("Fall");
         playerAnimator.SetBool("HasPlate", false);
         playerAnimator.SetBool("HasBeer", false);
@@ -157,7 +157,7 @@ public class PlayerController : MonoBehaviour
         if (!hasBeer)
         {
             var r = UnityEngine.Random.Range(0, beerLines.Count);
-            this.UpdateText(beerLines[r]);
+            this.UpdateText(beerLines[r], 3);
             hasBeer = true;
             playerAnimator.SetBool("HasBeer", true);
             playerAnimator.SetBool("HasPlate", true);
@@ -170,7 +170,7 @@ public class PlayerController : MonoBehaviour
         if (hasBeer)
         {
             var r = UnityEngine.Random.Range(0, serveLines.Count);
-            this.UpdateText(serveLines[r]);
+            this.UpdateText(serveLines[r], 2);
             playerAnimator.SetBool("HasBeer", false);
             hasBeer = false;
             Delivery?.Invoke();
@@ -182,7 +182,7 @@ public class PlayerController : MonoBehaviour
         if (hasBeer)
         {
             var r = UnityEngine.Random.Range(0, serveLines.Count);
-            this.UpdateText(serveLines[r]);
+            this.UpdateText(serveLines[r], 2);
             playerAnimator.SetBool("HasBeer", false);
             hasBeer = false;
             FailedDelivery?.Invoke();
@@ -192,10 +192,9 @@ public class PlayerController : MonoBehaviour
     public void NearCircuit(bool fried)
     {
         if (fried)
-            this.UpdateText("Press E to repair Circuit");
-        else this.UpdateText("This Circuit is fine");
+            this.UpdateText("Press E to repair Circuit", 3);
+        else this.UpdateText("This Circuit is fine", 2);
     }
-
 
 
 

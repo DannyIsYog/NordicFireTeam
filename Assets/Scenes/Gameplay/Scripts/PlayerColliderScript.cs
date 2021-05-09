@@ -90,6 +90,7 @@ public class PlayerColliderScript : MonoBehaviour
             playerController.nearPuddle = true;
         }
 
+      
         else if (collision.gameObject.tag == "Circuit")
         {
             isFried = collision.gameObject.GetComponent<Circuit>().fried;
