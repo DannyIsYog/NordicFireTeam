@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     SpriteRenderer playerSprite;
     Animator playerAnimator;
     public bool nearPuddle = false;
-    private bool downed = false;
+    public bool downed = false;
     public bool hasBeer = false;
     public event Action Delivery;
     public event Action FailedDelivery;
