@@ -972,7 +972,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 6, y: 319}
+  m_AnchoredPosition: {x: 6, y: 397}
   m_SizeDelta: {x: 451.4328, y: 79.0055}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &207319395
@@ -2756,7 +2756,7 @@ GameObject:
   - component: {fileID: 1806086515}
   - component: {fileID: 1806086514}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: TextHowToPlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2778,7 +2778,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 19.1366, y: -23.2374}
+  m_AnchoredPosition: {x: 19.1366, y: 113}
   m_SizeDelta: {x: 1391.938, y: 440.934}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1806086514
@@ -2805,9 +2805,10 @@ MonoBehaviour:
     and get a beer (Press E to get beer).\n-  Pay attention to  the name of the customer
     you have to serve (Bottom Center).\n- Find him  and serve him the beer (Press
     E to server)!\n\nFrom time to time the TV wil break down you will have to fix
-    it. While the TV is broken customers will get angry, follow you around, throw
-    things at you, start fights.\n\nServe as much beer as possible\n\nMovement -
-    WASD"
+    it. To do this you will have to find the circuits on the walls, one of thwm will
+    be on fire (Press E to reapair the circuit). \n\n. While the TV is broken customers
+    will get angry, follow you around, throw things at you, start fights.\n\nServe
+    as much beer as possible\n\nMovement - WASD"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
