@@ -11,6 +11,7 @@ public class Groovy : MonoBehaviour
     [SerializeField] public AudioClip[] _clipsTV;
     [SerializeField] public AudioClip[] _clipsPlayer;
     [SerializeField] public AudioClip[] _clipsCrowd;
+    [SerializeField] public AudioClip[] _clipsMusic;
 
     [SerializeField] public AudioSource _audioTV;
     [SerializeField] public AudioSource _audioPlayer;
@@ -24,6 +25,7 @@ public class Groovy : MonoBehaviour
     void Start()
     {
         _audioTV.clip = _clipsTV[0];
+        PlayNextSong();
         _audioTV.Play();
 
         _player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
@@ -78,5 +80,10 @@ public class Groovy : MonoBehaviour
         _audioPlayer.Play();
     }
 
-
+    void PlayNextSong()
+    {
+        _audioMusic.clip = _clipsMusic[UnityEngine.Random.Range(0, _clipsMusic.Length)];
+        _audioMusic.Play();
+        Invoke("PlayNextSong", _audioMusic.clip.length);
+    }
 }
