@@ -6,26 +6,29 @@ using TMPro;
 
 public class PubManager : MonoBehaviour
 {
+    //Random Values
     [SerializeField] public float RandomMax;
     [SerializeField] public float RandomMin;
-    public List<GameObject> throwablePrefabs;
+    private float _randomNum;
+    private int _randomNumClient;
 
+    //Lists
     private List<ClientController> Clients;
     private List<Places> Places;
     private List<FightZoneScript> fightZones;
+    public List<GameObject> throwablePrefabs;
     private List<string> irishNames;
 
-    public TextMeshProUGUI goalClient;
+    //Controllers
     private PlayerController playerController;
-
-    public List<GameObject> clientPrefabs;
     public ClientController CurrentClient;
+
+    public TextMeshProUGUI goalClient;
+    public List<GameObject> clientPrefabs;
     private int _total;
     public bool TV;
-   
-    private float _randomNum;
-    private int _randomNumClient;
     private GameObject _TVLight;
+    public int Phase;
 
     #region Events
     public event Action TVOn;
@@ -37,6 +40,7 @@ public class PubManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Phase = 0;
         _TVLight = GameObject.FindGameObjectWithTag("TVLight");
         irishNames= new List<string>()
         {
@@ -164,6 +168,7 @@ public class PubManager : MonoBehaviour
         else
         {
             SortCustomers();
+            Phase += 1;
             TVOn?.Invoke();
             TV = true;
             _randomNum = UnityEngine.Random.Range(RandomMin, RandomMax);
