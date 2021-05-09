@@ -35,6 +35,7 @@ public class ClientController : MonoBehaviour
 
     void Start()
     {
+        _probabilities = new float[3][];
         PopulateProbabilities();
         _collider = this.GetComponent<BoxCollider2D>();
         this.clientText = this.GetComponent<TMPro.TextMeshPro>();
@@ -211,18 +212,22 @@ public class ClientController : MonoBehaviour
         {
 
             case 1:
+                Debug.Log("vou beber");
                 DrinkBeer();
                 break;
 
             case 2:
+                Debug.Log("vou atirar");
                 throwing = true;
                 break;
 
             case 3:
+                Debug.Log("vou lutar");
                 Fight();
                 break;
 
             case 4:
+                Debug.Log("vou seguir");
                 FollowPlayer();
                 break;
         }
@@ -230,31 +235,32 @@ public class ClientController : MonoBehaviour
 
     void PopulateProbabilities()
     {
-        _probabilities[0] = new float[4] { .9f, .1f, 0, 0 };
-        _probabilities[1] = new float[4] { .6f, .2f, .2f, 0 };
-        _probabilities[2] = new float[4] { .4f, .2f, .2f, .2f };
+        _probabilities[0] = new float[4] {  1f, .1f, 0, 0 };
+        _probabilities[1] = new float[4] {  1f, .4f, .2f, 0 };
+        _probabilities[2] = new float[4] {  1f, .6f, .4f, .2f };
     }
 
     void ChooseAction()
     {
         int phase = pubs.Phase;
         float rand = Random.Range(0f, 1f);
-        if (rand <= _probabilities[phase][0])
-        {
-            type = 1;
-        }
-        else if (rand <= _probabilities[phase][1])
-        {
-            type = 2;
-        }
-        else if (rand <= _probabilities[phase][2])
-        {
-            type = 3;
-        }
-        else
+        if (rand <= _probabilities[phase][3])
         {
             type = 4;
+            return;
         }
+        if (rand <= _probabilities[phase][2])
+        {
+            type = 3;
+            return;
+        }
+        if (rand <= _probabilities[phase][1])
+        {
+            type = 2;
+            return;
+        }
+
+        type = 1;
     }
 
 

@@ -168,7 +168,10 @@ public class PubManager : MonoBehaviour
         else
         {
             SortCustomers();
-            Phase += 1;
+            if (Phase < 3)
+            {
+                Phase += 1;
+            }
             TVOn?.Invoke();
             TV = true;
             _randomNum = UnityEngine.Random.Range(RandomMin, RandomMax);
