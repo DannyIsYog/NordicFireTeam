@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2164651443640506287}
   - component: {fileID: 6661530962468659020}
-  - component: {fileID: 1985094078309327065}
+  - component: {fileID: 1042066566883321670}
   m_Layer: 0
   m_Name: Fire
   m_TagString: Untagged
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &1985094078309327065
+--- !u!95 &1042066566883321670
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -199,7 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d03a93c3ae17ebe40b834cadb3b50f27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CircuitAnim: {fileID: 1985094078309327065}
+  CircuitAnim: {fileID: 1042066566883321670}
   fried: 0
 --- !u!61 &1587224041043655248
 BoxCollider2D:
