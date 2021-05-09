@@ -2801,14 +2801,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "You are the manager of a pub and have to serve beer. \n- Go to the counter
-    and get a beer (Press E to get beer).\n-  Pay attention to  the name of the customer
-    you have to serve (Bottom Center).\n- Find him  and serve him the beer (Press
-    E to server)!\n\nFrom time to time the TV wil break down you will have to fix
-    it. To do this you will have to find the circuits on the walls, one of thwm will
-    be on fire (Press E to reapair the circuit). \n\n. While the TV is broken customers
-    will get angry, follow you around, throw things at you, start fights.\n\nServe
-    as much beer as possible\n\nMovement - WASD"
+  m_text: "You are the manager of a pub and have to serve beer:\n- Go to the bar
+    counter and get a beer (Press E to get beer).\n- Pay attention to  the name of
+    the customer that ordered it (Bottom Center).\n- Find the client and serve the
+    beer (Press E to server)!\n\nFrom time to time the TV wil break down you will
+    have to fix it. \nTo do this you will have to find the short-circuits on the
+    wall, one of them will be on fire (Press E to repair the circuit). \n\nWhile
+    the TV is broken customers will get angry, be careful!\n\nServe as much beer
+    as possible until the time is over\n\nMovement - WASD"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

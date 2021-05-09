@@ -237,8 +237,8 @@ public class ClientController : MonoBehaviour
         _probabilities[2] = new float[4] {  1f, .4f, .6f, .1f };
         _probabilities[3] = new float[4] { 1f, .6f, .8f, .3f };
         _probabilities[4] = new float[4] { .9f, .8f, .8f, .5f };
-        _probabilities[3] = new float[4] {.6f, 1f, .8f, .7f };
-        _probabilities[4] = new float[4] { .2f, 1f, .8f, .8f };
+        _probabilities[5] = new float[4] {.6f, 1f, .8f, .7f };
+        _probabilities[6] = new float[4] { .2f, 1f, .8f, .8f };
     }
 
     void ChooseAction()

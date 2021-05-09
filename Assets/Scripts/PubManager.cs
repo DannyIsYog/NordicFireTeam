@@ -139,7 +139,7 @@ public class PubManager : MonoBehaviour
 
     private void SortCustomers()
     {
-        Debug.Log("Sorted Customers");
+      
         for (int i = 0; i < _total; i++)
         {
             Places temp = Places[i];
@@ -177,7 +177,7 @@ public class PubManager : MonoBehaviour
         else
         {
             SortCustomers();
-            if (Phase < 3)
+            if (Phase < 6)
             {
                 Phase += 1;
             }
