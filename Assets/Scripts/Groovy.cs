@@ -27,6 +27,8 @@ public class Groovy : MonoBehaviour
         _audioTV.clip = _clipsTV[0];
         PlayNextSong();
         _audioTV.Play();
+        _audioCrowd.clip = _clipsCrowd[2];
+        _audioCrowd.Play();
 
         _player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
 
@@ -73,6 +75,8 @@ public class Groovy : MonoBehaviour
     {
         _audioCrowd.clip = _clipsCrowd[0];
         _audioCrowd.Play();
+        StartCoroutine("waitThreeSeconds");
+
     }
 
     void Booing()
@@ -93,4 +97,12 @@ public class Groovy : MonoBehaviour
         _audioMusic.Play();
         Invoke("PlayNextSong", _audioMusic.clip.length);
     }
+
+    IEnumerator waitThreeSeconds()
+    {
+        yield return new WaitForSeconds(4);
+        _audioCrowd.clip = _clipsCrowd[2];
+        _audioCrowd.Play();
+    }
+
 }
