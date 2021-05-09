@@ -51,6 +51,9 @@ TagManager:
   - name: CounterLayer
     uniqueID: 1596875781
     locked: 0
+  - name: Clients
+    uniqueID: 203046999
+    locked: 0
   - name: TablesAndDecor
     uniqueID: 2673437573
     locked: 0

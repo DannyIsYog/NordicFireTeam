@@ -55,6 +55,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: fb45b976ebdec1a4186bf21fd3471e02, type: 3}
   _clipsCrowd:
   - {fileID: 8300000, guid: 45695fb1ba87bc64ba54ce612c2a51de, type: 3}
+  - {fileID: 8300000, guid: 2e41e544aa42c1949b35808f89c5071c, type: 3}
+  _clipsMusic:
+  - {fileID: 8300000, guid: 1df42e1fc4b92f24a8017b3e71c387fe, type: 3}
+  - {fileID: 8300000, guid: 1905303550bc4eb4484787a6d54cc047, type: 3}
   _audioTV: {fileID: 0}
   _audioPlayer: {fileID: 0}
   _audioMusic: {fileID: 5801166319247389160}
@@ -103,7 +107,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5903a9254db80ca43af8397e4cf78f74, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1df42e1fc4b92f24a8017b3e71c387fe, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

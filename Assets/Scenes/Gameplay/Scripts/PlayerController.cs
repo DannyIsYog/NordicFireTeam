@@ -26,14 +26,15 @@ public class PlayerController : MonoBehaviour
     {
         "I got hit",
         "Call an ambulance",
-        "By Odin's Beard!"
+        "By St.Patrick's Beard!"
     };
 
     List<string> serveLines = new List<string>()
     {
         "You got served",
         "There you go",
-        "Drink it all"
+        "Drink it all",
+        "Down the hatch"
     };
 
     List<string> beerLines = new List<string>()
