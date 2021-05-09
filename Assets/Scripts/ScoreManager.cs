@@ -38,4 +38,9 @@ public class ScoreManager : MonoBehaviour
         _animatorLess1.SetTrigger("Score");
         _score -= 1;
     }
+
+    public float getScore()
+    {
+        return _score;
+    }
 }
