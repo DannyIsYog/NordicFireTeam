@@ -7,8 +7,10 @@ public class Warning : MonoBehaviour
     // Start is called before the first frame update
     public Animator WarningAnim;
     private PubManager _pubs;
+    private int phase;
     void Start()
     {
+        phase = 0;
         _pubs = GameObject.FindGameObjectWithTag("PubManager").GetComponent<PubManager>();
         _pubs.TVOff += Warn;
         _pubs.TVOn += StopWarn;
@@ -22,7 +24,12 @@ public class Warning : MonoBehaviour
 
     void Warn()
     {
+        if(phase > 1)
+        {
+            return;
+        }
         WarningAnim.SetBool("TVFixed", false);
+        phase += 1;
     }
     void StopWarn()
     {
