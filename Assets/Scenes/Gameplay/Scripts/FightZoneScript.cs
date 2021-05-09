@@ -9,8 +9,8 @@ public class FightZoneScript : MonoBehaviour
     public GameObject bottlePrefab;
     public float throwForce = 2.0f;
 
-    private float moveX;
-    private float moveY;
+    private float moveX = 1;
+    private float moveY = 0;
     private bool waitingForClients = false;
     private bool started = false;
 
@@ -43,7 +43,7 @@ public class FightZoneScript : MonoBehaviour
             }
             else NextAction();
 
-            this.transform.Rotate(0f, 0f, 0.05f);
+            this.transform.Rotate(0f, 0f, 0.1f);
 
 
         }
@@ -72,39 +72,49 @@ public class FightZoneScript : MonoBehaviour
 
     public void Activate()
     {
+        Debug.Log("Activated");
         waitingForClients = true;
     }
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(waitingForClients)
-        if (collision.gameObject.tag == "Client")
-            if (customer1 == null)
-            {
-                customer1 = collision.gameObject;
-                customer1.gameObject.GetComponentInChildren<ClientController>().Fighting();
-            }
-            else if (customer2 == null && collision.gameObject != customer1)
-            {
-                customer2 = collision.gameObject;
-                customer2.gameObject.GetComponentInChildren<ClientController>().Fighting();
-                StartFight();
-            } else
+        if (waitingForClients)
+        {
+            if (collision.gameObject.tag == "Client")
+                if (customer1 == null)
+                {
+                    customer1 = collision.gameObject;
+                    customer1.gameObject.GetComponentInChildren<ClientController>().Fighting();
+                }
+                else if (customer2 == null && collision.gameObject != customer1)
+                {
+                    customer2 = collision.gameObject;
+                    customer2.gameObject.GetComponentInChildren<ClientController>().Fighting();
+                    StartFight();
+                }
+                else
                 {
                     collision.gameObject.GetComponentInChildren<ClientController>().Fighting();
+                    StartFight();
                 }
+
+        }
     }
 
     void StartFight()
     {
+
         started = true;
         spriteRenderer.color = new Color(1, 1, 1,1);
     }
 
     public void StopFight()
     {
+        waitingForClients = false;
         started = false;
+        customer1 = null;
+        customer2 = null;
         spriteRenderer.color = new Color(0, 0, 0, 0);
     }
 
