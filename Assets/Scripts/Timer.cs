@@ -27,10 +27,11 @@ public class Timer : MonoBehaviour
     {
         if (finnished)
         {
-            scoreText.GetComponent<TextMeshPro>().text = "" + ScoreManager.GetComponent<ScoreManager>().getScore();
-            EndingScreen.SetActive(false);
+            EndingScreen.SetActive(true);
+          scoreText.GetComponent<TextMeshProUGUI>().text = "" + ScoreManager.GetComponent<ScoreManager>().getScore();
+            
         }
-        float tt = 5400 - (Time.time - _startTime) * 1000f;
+        float tt = 5400 - (Time.time - _startTime) * 22.5f;
         string minutes = ((int)tt / 60).ToString();
         string seconds = ((int)tt % 60).ToString();
 
