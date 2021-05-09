@@ -10,6 +10,7 @@ TagManager:
   - FightingPoint
   - Seat
   - FightZone
+  - TVLight
   layers:
   - Default
   - TransparentFX
