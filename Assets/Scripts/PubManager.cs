@@ -25,6 +25,7 @@ public class PubManager : MonoBehaviour
    
     private float _randomNum;
     private int _randomNumClient;
+    private GameObject _TVLight;
 
     #region Events
     public event Action TVOn;
@@ -36,6 +37,7 @@ public class PubManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _TVLight = GameObject.FindGameObjectWithTag("TVLight");
         irishNames= new List<string>()
         {
        "O'Sullivan" ,"Mc Gregor", 
@@ -156,6 +158,7 @@ public class PubManager : MonoBehaviour
             TV = false;
             _randomNum = UnityEngine.Random.Range(RandomMin, RandomMax);
             _randomNum += Time.unscaledTime;
+            _TVLight.SetActive(false);
 
         }
         else
@@ -165,6 +168,7 @@ public class PubManager : MonoBehaviour
             TV = true;
             _randomNum = UnityEngine.Random.Range(RandomMin, RandomMax);
             _randomNum += Time.unscaledTime;
+            _TVLight.SetActive(true);
         }
     }
 
