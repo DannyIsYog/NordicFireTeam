@@ -10,6 +10,7 @@ public class PubManager : MonoBehaviour
     [SerializeField] public float RandomMax;
     [SerializeField] public float RandomMin;
     private float _randomNum;
+    private float _startTime;
     private int _randomNumClient;
 
     //Lists
@@ -95,7 +96,10 @@ public class PubManager : MonoBehaviour
             var fController = f.GetComponent<FightZoneScript>();
             fightZones.Add(fController);
         }
+
         _randomNum = UnityEngine.Random.Range(RandomMin, RandomMax);
+        _startTime = Time.unscaledTime;
+
         var objs = GameObject.FindGameObjectsWithTag("Seat");
         var index = 0;
         Places = new List<Places>();
@@ -127,7 +131,7 @@ public class PubManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.unscaledTime >= _randomNum && TV)
+        if (Time.unscaledTime - _startTime >= _randomNum && TV)
         {
             SwapMusicState();
         }
@@ -180,7 +184,7 @@ public class PubManager : MonoBehaviour
             TVOn?.Invoke();
             TV = true;
             _randomNum = UnityEngine.Random.Range(RandomMin, RandomMax);
-            _randomNum += Time.unscaledTime;
+            _randomNum += Time.unscaledTime - _startTime;
             _TVLight.SetActive(true);
         }
     }
