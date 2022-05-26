@@ -14,6 +14,7 @@ public class MainMenu : MonoBehaviour
 
     public void goToMainMenu()
     {
+        Cursor.visible = true;
         SceneManager.LoadScene(mainMenuScene);
     }
 }

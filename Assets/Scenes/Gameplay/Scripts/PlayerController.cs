@@ -27,7 +27,9 @@ public class PlayerController : MonoBehaviour
         "I got hit",
         "Call an ambulance",
         "By St.Patrick's Beard!",
-        "Not again!"
+        "Not again!",
+        "Why me?",
+        "I need to go to the gym"
     };
 
     List<string> serveLines = new List<string>()
@@ -35,7 +37,10 @@ public class PlayerController : MonoBehaviour
         "You got served",
         "There you go",
         "Drink it all",
-        "Down the hatch"
+        "Down the hatch",
+        "Cheers!",
+        "I got more where this came from",
+        "Did you see that LUDicrous display last night?!"
     };
 
     List<string> beerLines = new List<string>()
@@ -43,7 +48,8 @@ public class PlayerController : MonoBehaviour
         "I need another one",
         "Save one for me",
         "Another round!",
-        "Enjoy!!"
+        "Enjoy!!",
+        "Arsenal always try to walk it in"
     };
 
     void Start()

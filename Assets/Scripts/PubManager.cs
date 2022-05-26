@@ -20,6 +20,7 @@ public class PubManager : MonoBehaviour
     public List<GameObject> throwablePrefabs;
     public List<Circuit> Circuits;
     private List<string> irishNames;
+    private ArrowScript arrowScript;
 
     //Controllers
     private PlayerController playerController;
@@ -48,21 +49,22 @@ public class PubManager : MonoBehaviour
         }
         Phase = 0;
         _TVLight = GameObject.FindGameObjectWithTag("TVLight");
-        irishNames= new List<string>()
+        Cursor.visible = false;
+        irishNames = new List<string>()
         {
-       "O'Sullivan" ,"Mc Gregor", 
+       "O'Sullivan" ,"Mc Gregor",
         "O'Brien" ,
             "O'Neill" ,
              "O'Carroll",
              "O'Reilly" ,
             "McCarthy",
-            "Gallagher", 
-             "McLoughlin", 
+            "Gallagher",
+             "McLoughlin",
             "Connolly" ,
              "Collins" ,
-            "Fitzgerald", 
+            "Fitzgerald",
              "Maguire" ,
-             "O'Callaghan", 
+             "O'Callaghan",
             "O’Mahony" ,
            "O'Shea",
            "O'Callaghan",
@@ -72,6 +74,24 @@ public class PubManager : MonoBehaviour
            "Flanagan",
            "Guimaraes",
            "Antunes",
+           "JLopes",
+           "Di'Rato",
+           "Ru' Prada",
+           "O'Connor",
+           "Aileen",
+           "Happy George",
+           "O'Renata",
+           "Shane",
+           "Uaine",
+           "A'Costa",
+           "Marc'Reb'Sousa",
+           "O'Coins",
+           "I'Saltino",
+           "The Truck O'Neill",
+           "I'gnorant",
+           "Patches O'hoolihan",
+           "Arsenal Sucks",
+           "O'Porto",
            "Costa",
            "Machado",
            "Sousa",
@@ -122,6 +142,7 @@ public class PubManager : MonoBehaviour
 
          
         }
+        arrowScript = GameObject.Find("Player").GetComponentInChildren<ArrowScript>();
         _total = Clients.Count;
         SortCustomers();
         ChooseNextClient();
@@ -185,6 +206,7 @@ public class PubManager : MonoBehaviour
             TV = true;
             _randomNum = UnityEngine.Random.Range(RandomMin, RandomMax);
             _randomNum += Time.unscaledTime - _startTime;
+            arrowScript.DeActivate();
             _TVLight.SetActive(true);
         }
     }
@@ -207,6 +229,8 @@ public class PubManager : MonoBehaviour
     {
         int randoms = UnityEngine.Random.Range(0, Circuits.Count);
         Circuits[randoms].Fry();
+        arrowScript.Activate(Circuits[randoms].gameObject.transform);
+
     }
 
   
